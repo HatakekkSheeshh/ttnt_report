@@ -1,0 +1,916 @@
+% \subsection{Overview}
+
+\subsection{Introduction to GOSU Corporation}
+
+\subsubsection{General Information}
+
+GOSU Online Corporation, founded in 2012, operates in information technology and digital content, with a particular focus on producing, developing, and publishing online games. As one of the leading game publishers in Vietnam, GOSU currently has three representative offices in Hanoi, Hue, and Ho Chi Minh City. The company has successfully operated many well–known titles such as \emph{Cửu Âm Chân Kinh}, \emph{Con Đường Tơ Lụa Origin Mobile}, and \emph{Ngạo Kiếm Vô Song Origin}. GOSU received the SME100 Award recognizing outstanding SMEs in Asia and ranked among the Top 6 largest game publishers in Vietnam at GameVerse 2024. Beyond publishing, GOSU also focuses on “Make in Vietnam” game production and is gradually expanding Vietnamese game products to international markets (Website: \url{https://gosucorp.vn/vi}).
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Images/logo_gosu.png}
+    \caption{GOSU company logo}
+    \label{fig:logo}
+\end{figure}
+
+\subsubsection{Business Areas}
+
+GOSU Corp focuses on the following main areas:
+\begin{itemize}
+    \item \textbf{Game publishing:} The company’s core business, including licensing popular international games, localizing them for Vietnam, and publishing in the domestic market.
+
+    \item \textbf{Game production:} Investment in the in–house development of high–quality “hardcore” games bearing a Vietnamese identity.
+
+    \item \textbf{Technology ecosystem:} GOSU has built and developed an ecosystem with tens of millions of users, including the GOSU Pay electronic payment gateway.
+
+    \item \textbf{Investment:} Participation in technology startup investments, such as OplaCRM, to broaden the portfolio and support promising tech companies.
+
+    \item \textbf{International markets:} GOSU’s services have been released in more than 10 Asian countries, demonstrating expansion beyond the domestic market.
+\end{itemize}
+
+\subsubsection{Corporate Culture and Work Environment}
+
+At GOSU, corporate culture is not just a set of rules on paper but a source of inspiration for daily activities. The company encourages a creative and flexible working spirit, enabling individuals to proactively adapt to the ever–changing game market. Team spirit is considered the bond that unites all members, creating a strong collective working toward common goals.
+
+Thanks to these core values, GOSU’s work environment is youthful, dynamic, and professional. Employees work in an open space where ideas are heard and respected. In addition to attractive benefits, the company emphasizes team–building and annual events, turning the workplace into a true “family,” where everyone works with passion and enthusiasm.
+
+\subsection{Internship Content}
+
+\subsubsection{Objectives}
+
+The internship topic is \emph{“Applying AI to Churn Prediction and Player Clustering for Personalized Game Marketing.”} The goal is to build AI models that analyze player behavior to early predict churn and cluster players by spending patterns, preferences, and playtime. This supports the company in deploying retention and personalized marketing strategies such as gifting, suggesting engaging quests, and optimizing promotional content, top–up packages, and item rewards.
+
+\subsubsection{Weekly Tasks}
+
+\subsubsubsection{Week 1}
+
+\subsubsubsection*{Task Description}
+
+\begin{itemize}
+    \item \textbf{Onboarding at GOSU}
+    \begin{itemize}
+        \item Attended the first meeting with the internship supervisor and IT team members.
+
+        \item Got an introduction to GOSU’s operating model, currently running titles, development directions, and the role of data analytics in operations and marketing.
+
+        \item Learned the team’s basic workflow: receiving analysis requests, communicating via the Huly app, and the process of collecting–processing–analyzing data and reporting results.
+    \end{itemize}
+
+    \item \textbf{Studying the concept of “Churn”}
+    \begin{itemize}
+        \item Reviewed internal documents and academic sources to understand churn in gaming: definition and measurement (login time, engagement level, spending behavior, etc.).
+
+        \item Studied common indicators for churn prediction such as DAU/MAU, retention rate, session length, in–game purchase frequency, …
+
+        \item Explored main causes of churn: unengaging content, imbalanced experience, competition, and misaligned promotions.
+    \end{itemize}
+
+    \item \textbf{Studying the concept of “Clustering”}
+    \begin{itemize}
+        \item Learned popular clustering algorithms: K–Means, Hierarchical Clustering, DBSCAN.
+
+        \item Researched how to cluster players by characteristics such as play frequency, spending behavior, play style, and stickiness.
+
+        \item Reviewed industry case studies on using clustering to optimize personalized marketing.
+    \end{itemize}
+
+    \item \textbf{Exploring the company’s ElasticSearch data storage}
+    \begin{itemize}
+        \item Studied ElasticSearch architecture and why it is used to store player behavioral data.
+
+        \item Learned key concepts: Index, Document, Mapping, Query DSL.
+
+        \item Practiced data retrieval with Kibana for churn and clustering analysis.
+
+        \item Examined real data structures of sample indices to understand how login, in–game behaviors, and transactions are stored.
+    \end{itemize}
+
+    \item \textbf{Learning the target game (Con Đường Tơ Lụa Origin Mobile)}
+    \begin{itemize}
+        \item Understood the context: a mobile MMORPG published by GOSU, based on the well–known \emph{Silk Road} franchise.
+
+        \item Studied gameplay mechanics: quest system, classes, PvP/PvE, trading, guilds, and item systems.
+
+        \item Identified potential churn factors: quest difficulty, time requirements for activities, player competition, item costs.
+
+        \item Investigated common player behaviors: activity times, spending level, login frequency, and churn–prone stages.
+
+        \item Linked this information with actual data to orient subsequent analysis.
+    \end{itemize}
+    
+    \item \textbf{Linking theory with GOSU practice}
+    \begin{itemize}   
+        \item Analyzed sample datasets (provided by the company) to observe characteristic behaviors of high–risk churn groups.
+
+        \item Discussed with the mentor about Vietnam–specific factors and the characteristics of \emph{Con Đường Tơ Lụa Origin Mobile} in churn and clustering analysis.
+    \end{itemize}
+\end{itemize}
+
+\subsubsubsection*{Results / Knowledge Gained}
+
+\begin{itemize}
+    \item Gained a clear understanding of churn and its importance in online gaming.
+
+    \item Learned indicators and factors affecting player churn.
+
+    \item Built basic knowledge about \emph{Con Đường Tơ Lụa Origin Mobile}: gameplay, player behaviors, and churn drivers.
+
+    \item Understood how to apply clustering to segment players and the goal of segmentation for personalized marketing.
+
+    \item Acquired fundamentals of ElasticSearch: data structure, storage, and retrieval for analysis.
+
+    \item Learned to use Kibana for basic queries to extract player data.
+
+    \item Obtained an overview of the data analysis workflow in practice at GOSU.
+
+    \item Established the foundation for next steps: building churn prediction and player clustering models on real data.
+\end{itemize}
+
+\subsubsubsection{Week 2}
+\subsubsubsection*{Task Description}
+
+\begin{itemize}
+    \item \textbf{Getting familiar with real data and querying from ElasticSearch}
+    \begin{itemize}
+        \item Used Kibana and Query DSL to extract data from indices related to player behaviors in the most recent month.
+
+        \item Identified the main data tables needed for churn and clustering analysis.
+    \end{itemize}
+
+    \item \textbf{Collecting and processing player behavioral data}
+    \begin{itemize}
+        \item \textbf{Login}
+        \begin{itemize}
+            \item Collected number of logins, login frequency, first and last login time.
+
+            \item Supported the calculation of retention metrics D1, D5, D7.
+        \end{itemize}
+
+        \item \textbf{Register}
+        \begin{itemize}
+            \item Retrieved registration time, registration channel, and basic account information.
+
+            \item Assessed the stickiness of new players compared to the current player base.
+        \end{itemize}
+
+        \item \textbf{Pay}
+        \begin{itemize}
+            \item Collected number of top–ups, total value, and payment methods.
+
+            \item Classified players by spending level (free–to–play, low/mid/high spender).
+        \end{itemize}
+
+        \item \textbf{Item Upgrade}
+        \begin{itemize}
+            \item Recorded successful/failed upgrade attempts and item level after upgrades.
+
+            \item Identified the relationship between upgrade activity and player engagement.
+        \end{itemize}
+
+        \item \textbf{User Items}
+        \begin{itemize}
+            \item Extracted the list of owned items, levels, rarity, and state.
+        \end{itemize}
+
+        \item \textbf{Item usage and trading activities}
+        \begin{itemize}
+            \item \textbf{Purchase:} counted transactions and most purchased item types.
+
+            \item \textbf{Use:} recorded the most frequently used items and usage frequency.
+
+            \item \textbf{Auction:} collected data on auctions participated/won/lost and successful selling prices.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Cleaning and standardizing data}
+    \begin{itemize}
+        \item Removed duplicate records or those missing player IDs.
+
+        \item Standardized timestamps to a consistent timezone (UTC+7).
+
+        \item Joined tables to build a complete behavioral profile for each player. 
+    \end{itemize}
+
+    \item \textbf{Preliminary analysis (EDA)}
+    \begin{itemize}
+        \item \textbf{Login}
+        \begin{itemize}
+            \item Computed total login days per player in the month; plotted distributions to identify groups with low vs. high activity.
+
+            \item Determined average weekly login frequency to classify: highly–active (near daily), occasional, near–inactive.
+        \end{itemize}
+
+        \item \textbf{Register}
+        \begin{itemize}
+            \item Grouped new players by registration week (week 1–4).
+
+            \item Computed retention D1, D5, D7 for each group to evaluate new–player retention.
+
+            \item Compared behaviors of new players (end–of–month cohorts) with those registered earlier.
+        \end{itemize}
+
+        \item \textbf{Pay}
+        \begin{itemize}
+            \item Plotted distributions of top–up count and total amount per player.
+
+            \item Identified Free–to–Play, Low, Mid, and High Spenders based on thresholds.
+
+            \item Explored preliminary correlation between login frequency and spending.
+        \end{itemize}
+
+        \item \textbf{Item Upgrade}
+        \begin{itemize}
+            \item Counted successful/failed upgrades per player.
+
+            \item Identified players who upgrade frequently and the relation with spending.
+        \end{itemize}
+
+        \item \textbf{User Items}
+        \begin{itemize}
+            \item Analyzed item distributions by rarity and level.
+
+            \item Identified players owning many high–value items.
+        \end{itemize}
+
+        \item \textbf{In–game Activities}
+        \begin{itemize}
+            \item \textbf{Purchase items:} number of purchases and most purchased types.
+
+            \item \textbf{Use items:} most used items and their frequency.
+
+            \item \textbf{Auctions:} number of auctions, win rate, and average selling price.
+        \end{itemize}
+
+        \item \textbf{Identifying behavior groups related to churn}
+        \begin{itemize}
+            \item Low logins, no spending, little interaction $\rightarrow$ high churn risk.
+
+            \item Spending but few logins $\rightarrow$ likely to “leave early despite investment”.
+
+            \item Highly active (many upgrades, many trades, much interaction) $\rightarrow$ high long–term potential.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\subsubsubsection*{Results / Knowledge Gained}
+
+\begin{itemize}
+    \item Became proficient in querying multiple tables from ElasticSearch for analysis.
+
+    \item Built a player behavior dataset including:
+    \begin{itemize}    
+        \item Logins, registrations.
+
+        \item Payment history.
+
+        \item Item upgrade activities.
+
+        \item Owned item list.
+
+        \item Purchases, uses, and auctions.
+    \end{itemize}
+    \item Gained clear understanding of behaviors and engagement levels of \emph{Con Đường Tơ Lụa Origin Mobile} players.
+
+    \item Produced a clean dataset ready for churn and clustering analysis.
+\end{itemize}
+
+\subsubsubsection{Week 3}
+\subsubsubsection*{Task Description}
+
+\begin{itemize}
+    \item \textbf{Labeling Churn}
+    \begin{itemize}
+        \item Agreed with mentor on a definition suitable for data and objectives (a player is considered churned if they do not log in for 7 consecutive days up to the analysis date).
+
+        \item Wrote a script to compute days since last login for each player and labeled:
+        \begin{itemize}
+            \item \texttt{Churn = 1} if consecutive non–login days $\geq$ 7.
+
+            \item \texttt{Churn = 0} if logged in within the last 7 days.
+        \end{itemize}
+    \end{itemize}
+    
+    \item \textbf{Data Normalization}
+    \begin{itemize}        
+        \item Ensured unified measurement units.
+
+        \item Converted categorical variables to numeric (one–hot) for modeling.
+
+        \item \textbf{Handling skewed data:}
+        \begin{itemize}
+            \item Checked spending–related variables for skewness (since not all players spend).
+
+            \item Applied the Yeo–Johnson transform (instead of log) to make distributions closer to normal, improving model learning.
+        \end{itemize}
+
+        \item \textbf{Feature scaling:}
+        \begin{itemize}
+            \item Applied \texttt{StandardScaler} after transformation to put variables on comparable scales.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Feature Engineering}
+    \begin{itemize}
+        \item From login data:
+        \begin{itemize}
+            \item Number of login days in the month.
+            \item Ratio of login days to account age (days).
+        \end{itemize}
+
+        \item From payment data:
+        \begin{itemize}
+            \item Total amount, average top–up per play session, days since last top–up.
+        \end{itemize}
+
+        \item From item \& activity data:
+        \begin{itemize}
+            \item Total item upgrade attempts, success rate.
+            \item Counts of purchases/uses/auctions.
+        \end{itemize}
+
+        \item Aggregate indices:
+        \begin{itemize}
+            \item “Activity” index = combined points from login, transactions, upgrades.
+            
+            \item “Engagement” index = combined points from continuous days, retention, interactions.
+        \end{itemize}
+
+        \item \textbf{Data verification}
+        \begin{itemize}
+            \item Ensured valid record counts after processing.
+            
+            \item Checked churn rate before/after labeling for reasonableness.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Organized an AI Seminar for the IT team}
+    \begin{itemize}
+        \item \textbf{Objectives:}
+        \begin{itemize}
+            \item Introduce AI concepts and applications in technology.
+
+            \item Provide foundational knowledge for the IT team to apply or study further.
+        \end{itemize}
+
+        \item \textbf{Seminar preparation:}
+        \begin{enumerate}
+            \item \emph{Introduction to AI} – what AI is, its history, and role in modern tech.
+
+            \item \emph{Types of AI and Applications} – categories and use cases.
+
+            \item \emph{AI Workflow and How to Learn AI} – data $\rightarrow$ processing $\rightarrow$ training $\rightarrow$ deployment and a self–study path.
+
+            \item \emph{Supervised Learning Explained} – foundations of Linear and Logistic Regression.
+            \item \emph{Demo} – a simple churn prediction demo on a sample dataset.
+        \end{enumerate}
+
+        \item \textbf{Seminar delivery:}
+        \begin{itemize}
+            \item Presented slides.
+
+            \item Answered questions.
+
+            \item Shared materials and learning links; conducted a quiz.
+        \end{itemize}
+
+    \end{itemize}
+
+    \begin{figure}[!h]
+        \centering
+        \begin{minipage}[b]{0.49\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Images/page1.jpg}
+            % \caption{Image 1}
+            \label{fig:image1}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[b]{0.49\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Images/page2.jpg}
+            % \caption{Image 2}
+            \label{fig:image2}
+        \end{minipage}
+        \caption{Seminar slides}
+    \end{figure}
+\end{itemize}
+
+
+\subsubsubsection*{Results / Knowledge Gained}
+\begin{itemize}
+    \item Produced a clean, consistent dataset ready for analysis and modeling.
+
+    \item Clearly defined churn labels based on the 7–day inactivity rule.
+
+    \item Engineered a rich feature set enabling more effective churn prediction and player clustering.
+
+    \item Built a standardized dataset suitable for clustering and AI modeling in subsequent weeks.
+
+    \item Reinforced AI knowledge through seminar preparation and delivery.
+
+    \item Improved technical communication skills.
+
+    \item Prepared the IT team to understand AI and support related projects in the future. 
+\end{itemize}
+
+\subsubsubsection{Week 4}
+\subsubsubsection*{Task Description}
+
+\subsubsubsection*{A. Training churn prediction models}
+
+\begin{itemize}
+    \item \textbf{Training data preparation}
+    \begin{itemize}
+        \item Used the preprocessed and standardized dataset from Week 3.
+
+        \item Split data by spending behavior:
+        \begin{itemize}
+            \item \textbf{Payers:} players with at least one top–up transaction.
+
+            \item \textbf{Non–Payers:} players who have never spent.
+        \end{itemize}
+
+        \item \textbf{Rationale for the split:}
+        \begin{itemize}
+            \item The two groups often show different behavior patterns; training separate models improves prediction accuracy.
+
+            \item Avoids spending–related features “contaminating” predictions for non–spenders.
+        \end{itemize}
+
+        \item \textbf{For each group:}
+        \begin{enumerate}
+            \item \textbf{Select appropriate features:}
+            \begin{itemize}
+                \item \textbf{Payers:} login frequency, days since last login, total top–up amount, days since last top–up, item upgrade counts, activity/engagement indices, …
+
+                \item \textbf{Non–Payers:} login frequency, days since last login, item upgrade counts, activity/engagement indices, …
+            \end{itemize}
+
+            \item Split into Train/Test with an 80:20 ratio.
+        \end{enumerate}
+    \end{itemize}
+     
+    \item \textbf{Training multiple models}
+    \begin{itemize}
+        \item Logistic Regression – interpretable baseline.
+
+        \item Random Forest (RF) – robust for many features, little preprocessing.
+
+        \item XGBoost – strong for tabular data with high performance.
+
+        \item LightGBM – fast training, good for large data.
+
+        \item CatBoost – handles categorical features well and reduces overfitting.
+
+        \item \textbf{Procedure:}
+        \begin{enumerate}
+            \item For each model, apply \texttt{RandomizedSearchCV} to find the best hyperparameters on the training set.
+
+            \item Evaluate each tuned model on the test set.
+
+            \item Save tuned models for inclusion in a Voting Classifier.
+        \end{enumerate}
+    \end{itemize}
+
+    \item \textbf{Ensembling (Voting Classifier)}
+    \begin{itemize}
+        \item Combined predictions from multiple models.
+
+        \item \textbf{Hard Voting:} choose the label predicted by the majority.
+    \end{itemize}
+
+    \item \textbf{Model evaluation}
+    \begin{itemize}
+        \item Metrics: Accuracy, Precision, Recall, F1–score, ROC–AUC.
+
+        \item Compared single models with the Voting model:
+        \begin{itemize}
+            \item Voting improved stability and reduced the risk of misclassification on edge cases.
+        \end{itemize}
+
+        \item Analyzed feature importance from tree–based models (RF, XGBoost, LightGBM, CatBoost) to identify the most influential churn drivers.
+    \end{itemize}
+
+\end{itemize}
+
+\subsubsubsection*{B. Player clustering}
+\begin{itemize}
+    \item \textbf{Preparing clustering data}
+    \begin{itemize}
+        \item Removed the churn label as this is an unsupervised task.
+
+        \item Identified and grouped behavioral features:
+        \begin{itemize}
+            \item Login \& retention (Engagement)
+            \item Spending (Monetization)
+            \item In–game activities
+            \item Inventory \& power
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Running multiple clustering algorithms}
+    \begin{itemize}
+        \item K–Means – chose the optimal number of clusters via Elbow \& Silhouette.
+
+        \item DBSCAN – detected anomalies and noise points.
+
+        \item Gaussian Mixture Model (GMM) – soft clustering with flexible cluster shapes.
+    \end{itemize}
+
+    \item \textbf{Evaluation \& interpretation}
+    \begin{itemize}
+        \item Described representative behaviors of each cluster across the four feature groups.
+
+        \item Compared churn rates across clusters to identify “high–risk” ones.
+    \end{itemize}
+   
+\end{itemize}
+
+\subsubsubsection*{C. Visualization of results}
+\begin{itemize}
+    \item \textbf{Churn prediction models}
+    \begin{itemize}
+        \item Plotted confusion matrices.
+
+        \item Plotted ROC curves and computed AUC to compare models.
+
+        \item Presented feature importance to highlight key drivers.
+    \end{itemize}
+
+    \item \textbf{Player clustering}
+    \begin{itemize}
+        \item Used PCA for dimensionality reduction and 2D visualization.
+
+        \item Plotted average feature comparisons per cluster (radar charts, bar charts).
+
+        \item Illustrated player distribution by cluster and its relation to churn rate.
+    \end{itemize}
+\end{itemize}
+
+\subsubsubsection*{Results / Knowledge Gained}
+\begin{itemize}
+    \item Built and compared multiple churn models for both Payers and Non–Payers:
+    \begin{itemize}
+        \item Logistic Regression, Random Forest, XGBoost, LightGBM, CatBoost.
+
+        \item Voting Classifier (hard voting) yielded the most stable and accurate results.
+    \end{itemize}
+    
+    \item Hyperparameter tuning with \texttt{RandomizedSearchCV} improved performance.
+
+    \item Identified the most important churn factors for each player group.
+
+    \item Successfully applied K–Means, DBSCAN, and GMM to cluster players by behavioral features.
+
+    \item Identified distinctive behavior groups and high–risk churn clusters → a basis for personalized marketing strategies.
+
+    \item Completed a set of visual dashboards to clearly explain results to the team.
+\end{itemize}
+
+\subsubsubsection{Week 5}
+\subsubsubsection*{Task Description}
+
+% \subsubsubsection*{A. Present results to stakeholders.}
+\begin{itemize}
+    \item \textbf{Presented results to stakeholders}
+    \begin{itemize}
+        \item \textbf{Prepared summary slides}
+        \begin{itemize}
+            \item Research objective: churn prediction \& player clustering for personalized marketing.
+    
+            \item Project workflow: data collection $\rightarrow$ preprocessing $\rightarrow$ training $\rightarrow$ clustering $\rightarrow$ analysis.
+    
+            \item Model performance metrics for churn.
+    
+            \item Clustering results.
+    
+            \item Visualizations.
+    
+            \item Marketing strategy recommendations.
+        \end{itemize}
+        
+        \item \textbf{Presentation session}
+        \begin{itemize}
+            \item Attendees: IT team and game operations team.
+    
+            \item Explained real–world meaning of each result.
+
+            \item Emphasized “high–risk” and “high–value” player groups for retention campaigns.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Designed a data pipeline for the dashboard}
+    \begin{enumerate}
+        \item \textbf{Goal:} build a web dashboard for the operations team to monitor:
+        \begin{itemize}
+            \item Churn rate over time.
+
+            \item Player distribution by cluster.
+
+            \item List of players in target marketing segments.
+        \end{itemize}
+
+        \item \textbf{Proposed pipeline}
+        \begin{itemize}
+            \item \textbf{Data Ingestion:} 
+            \begin{itemize}
+                \item Collect logs from ElasticSearch (login, payment, in–game actions).
+
+                \item Schedule a daily cron job to load new data.
+            \end{itemize}
+            
+            \item \textbf{ETL (Extract–Transform–Load):}
+            \begin{itemize}
+                \item Automated cleaning (handle missing values, outliers).
+
+                \item Assign churn labels (>= 7 days inactive).
+                
+                \item Compute behavioral \& financial features.
+                
+                \item Scale \& transform data.
+            \end{itemize}
+
+            \item \textbf{Model Serving:}
+            \begin{itemize}
+                \item Deploy the trained churn model.
+
+                \item Deploy the clustering model.
+
+                \item Store predictions \& cluster labels in a staging database.
+            \end{itemize}
+
+            \item \textbf{Web dashboard:}
+            \begin{itemize}
+                \item Tech stack: Python FastAPI + Streamlit.
+                
+                \item \textbf{Main pages:}
+                \begin{itemize}
+                    \item \textbf{Home Tab:} customer–segment matrix, search/filter, player list, select to view details.
+
+                    \item \textbf{Report Tab:} overall KPIs, churn–rate charts, top–spender analysis, high–risk identification, report export.
+
+                    \item \textbf{User Info Tab:} details for a selected player—engagement, spending, churn risk.
+                \end{itemize}
+
+            \item \textbf{Expected outputs}
+            \begin{itemize}
+                \item Internal dashboard running on the company server.
+
+                \item Browser access, no extra software installation.
+
+                \item Automatic data updates to enable fast marketing actions.
+            \end{itemize}
+            \end{itemize}
+        \end{itemize}
+    \end{enumerate}
+\end{itemize}
+
+\subsubsubsection*{Results / Knowledge Gained}
+\begin{itemize}
+    \item Experience presenting and explaining data–analysis results to multiple audiences.
+
+    \item Understood how to design an end–to–end data pipeline for deploying AI in real monitoring systems.
+
+    \item Recognized key considerations when designing dashboards: data sources, update frequency, UX/UI, and scalability.
+\end{itemize}
+
+\subsubsubsection{Week 6}
+\subsubsubsection*{Task Description}
+\begin{itemize}
+    \item \textbf{Learning FastAPI}
+    \begin{itemize}
+        \item Understood the architecture and how FastAPI works; compared pros/cons with Flask and Django.
+
+        \item Learned endpoint definitions, request/response handling, and integration with JSON and Pydantic models for schema management.
+
+        \item Practiced \texttt{async/await} to optimize API response time for heavy queries.
+    \end{itemize}
+    \newpage
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=0.5\linewidth]{Images/fastapi.png}
+        \caption{FastAPI web framework.}
+        \label{fig:placeholder}
+    \end{figure}
+    
+    \item \textbf{Designing \& implementing core APIs for the dashboard}
+    \begin{itemize}
+        \item \textbf{Cluster data API:} returns clusters, player counts, and key characteristics per cluster.
+
+        \item \textbf{Search \& filter API:} supports \texttt{user\_id}/name search; filters by cluster, spending level, or churn risk.
+
+        \item \textbf{Player detail API:} returns (de–identified) profile, interaction history, play behavior, spending, churn label, and cluster label.
+
+        \item \textbf{Overview statistics API:} returns player count, churn rate, cluster distribution, and churn trend.
+
+        \item \textbf{Report export API:} allows CSV/Excel download for deeper marketing analysis.
+    \end{itemize}
+
+    \item \textbf{Connecting APIs to the database}
+    \begin{itemize}
+        \item Connected FastAPI to ElasticSearch for login, payment, and in–game behavior data.
+
+        \item Optimized queries (proper indices, selecting only necessary fields) to reduce latency.
+    \end{itemize}
+
+\end{itemize}
+
+\subsubsubsection*{Results / Knowledge Gained}
+\begin{itemize}
+    \item Achieved basic proficiency with FastAPI and RESTful API development.
+
+    \item Designed APIs meeting dashboard requirements, balancing response speed and payload size.
+
+    \item Understood how to connect the AI system (churn \& clustering models) to APIs for a real–time dashboard.
+\end{itemize}
+
+
+\subsubsubsection{Week 7}
+\subsubsubsection*{Task Description}
+\begin{itemize}
+    \item \textbf{Learning Streamlit}
+    \begin{itemize}
+        \item Understood Streamlit’s mechanism: rendering web UIs from Python and live updates as data changes.
+
+        \item Learned how to combine UI components: sidebar, filters, tables, charts, and tabs.
+
+        \item Explored visualization libraries used in Streamlit (Plotly, Matplotlib, Altair).
+    \end{itemize}
+
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=0.5\linewidth]{Images/streamlit.png}
+        \caption{Streamlit framework.}
+        \label{fig:placeholder}
+    \end{figure}
+    
+    \item \textbf{Integrating FastAPI into the dashboard}
+    \begin{itemize}
+        \item Called the Week 6 APIs to fetch clustering data, player details, and overall statistics.
+
+        \item Processed API responses and displayed them per tab requirements:
+        \begin{itemize}
+            \item \textbf{Home Tab:} segment matrix, search/filter controls, player list, select–to–view.
+
+            \item \textbf{Report Tab:} KPIs, churn–rate charts, top–spender table, high–risk list.
+
+            \item \textbf{User Info Tab:} detailed view for the selected player, including activity charts and churn–risk scores.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Organized an AI Seminar for the IT team}
+    \begin{itemize}
+        \item \textbf{Objectives:}
+        \begin{itemize}
+            \item Introduce and consolidate foundational knowledge of Supervised Learning.
+
+            \item Help members understand popular algorithms, principles, and use cases.
+
+            \item Provide a foundation to apply Supervised Learning to real analysis/prediction projects.
+        \end{itemize}
+
+    \item \textbf{Seminar content preparation:}
+    \begin{enumerate}
+        \item \textbf{Recap – What is Supervised Learning?}
+        \begin{itemize}
+            \item Concept, workflow, and main components.
+
+            \item Distinguishing supervised vs. unsupervised learning.
+        \end{itemize}
+
+        \item \textbf{Linear \& Logistic Regression}
+        \begin{itemize}
+            \item Mathematical principles and usage.
+
+            \item Applications and pros/cons.
+        \end{itemize}
+
+        \item \textbf{Naive Bayes}
+        \begin{itemize}
+            \item Bayes–probability principle.
+
+            \item Uses in text classification, spam detection, sentiment analysis.
+        \end{itemize}
+
+        \item \textbf{K–Nearest Neighbors (KNN)}
+        \begin{itemize}
+            \item Nearest–neighbor search principle.
+
+            \item Effects of $K$ and distance metrics.
+
+            \item Applications and pros/cons.
+        \end{itemize}
+
+        \item \textbf{Decision Trees and Ensemble Learning}
+        \begin{itemize}
+            \item How decision trees split data.
+
+            \item Introduction to Bagging, Boosting, Stacking and their benefits.
+        \end{itemize}
+
+        \item \textbf{Demo}
+        \begin{itemize}
+            \item Train a supervised model on a sample dataset.
+
+            \item Make predictions and visualize results.
+        \end{itemize}
+
+        \item \textbf{Quiz \& Interactive Q\&A}
+        \begin{itemize}
+            \item Prepared a Quizziz set related to the seminar content.
+
+            \item Questions covered concepts, principles, practical uses, and demo analysis.
+        \end{itemize}
+    \end{enumerate}
+
+    \item \textbf{Seminar delivery:}
+    \begin{itemize}
+        \item Presented slides with illustrative examples.
+
+        \item Performed a live demo.
+
+        \item Organized a Quizziz session:
+        \begin{itemize}
+            \item Participants answered via phone/laptop.
+
+            \item A real–time leaderboard created an engaging atmosphere.
+
+        \end{itemize}
+        \item Q\&A, experience sharing.
+
+        \item Shared materials, learning links, demo code, and quiz links.
+    \end{itemize}
+
+    \begin{figure}[!h]
+    \centering
+    \begin{minipage}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/images-2.jpg}
+        % \caption{Image 1}
+        \label{fig:image1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/images-1.jpg}
+        % \caption{Image 2}
+        \label{fig:image2}
+    \end{minipage}
+    \caption{Seminar slides}
+    \end{figure}
+\end{itemize}
+\end{itemize}
+
+\subsubsubsection*{Results / Knowledge Gained}
+\begin{itemize}
+    \item Completed an internal web dashboard accessible via browser.
+
+    \item Data updates automatically from AI models and ElasticSearch.
+
+    \item Fully met operations and marketing needs: monitor churn, segment customers, and support retention decisions.
+
+    \item IT team understood the concepts, workflow, and common supervised algorithms.
+
+    \item Participants were assessed immediately via a quiz.
+
+    \item Increased interaction and retention through Q\&A and games.
+\end{itemize}
+
+\subsubsubsection{Week 8}
+\subsubsubsection*{Task Description}
+\begin{itemize}
+    \item \textbf{Writing the final project report}
+    \begin{itemize}
+        \item Introduced objectives, scope, and project phases.
+
+        \item Described data processing, model training, clustering, and dashboard development.
+
+        \item Presented results with illustrations, charts, and evaluation matrices.
+
+        \item Assessed model performance and accuracy in churn/segmentation prediction.
+    \end{itemize}
+
+    \item \textbf{Final presentation \& demo}
+    \begin{itemize}
+        \item Gave an overview of the project.
+
+        \item Live–demoed the dashboard and guided the operations team.
+
+        \item Answered questions and collected feedback.
+    \end{itemize}
+\end{itemize}
+
+% \begin{figure}[!h]
+%     \centering
+%     \includegraphics[width=0.5\linewidth]{Images/demo.jpg}
+%     \caption{Demo web dashboard.}
+%     % \label{fig:placeholder}
+% \end{figure}
+
+\subsubsubsection*{Results / Knowledge Gained}
+\begin{itemize}
+    \item Completed a comprehensive final report for internal archiving and sharing.
+
+    \item Delivered a fully functional, intuitive demo dashboard.
+
+    \item Received positive feedback and improvement suggestions from the team.
+\end{itemize}

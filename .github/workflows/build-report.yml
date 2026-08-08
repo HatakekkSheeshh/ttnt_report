@@ -1,0 +1,128 @@
+name: Build thesis PDF
+
+on:
+  push:
+    branches: ['main*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-thesis-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build final_thesis_report.pdf
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Cache LaTeX build (incremental)
+        uses: actions/cache@v6
+        with:
+          path: tex-builds
+          key: tex-builds-${{ hashFiles('**/*.tex', 'Images/**') }}
+          restore-keys: |
+            tex-builds-
+
+      - name: Build main.tex (TeX Live full + biber)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          latexmk_shell_escape: false
+          args: -pdf -outdir=tex-builds -halt-on-error -interaction=nonstopmode -file-line-error
+
+      - name: Collect PDF as final_thesis_report.pdf
+        run: |
+          if [ -f tex-builds/main.pdf ]; then
+            cp tex-builds/main.pdf final_thesis_report.pdf
+          elif [ -f main.pdf ]; then
+            cp main.pdf final_thesis_report.pdf
+          else
+            echo "::error::latexmk did not produce main.pdf (checked tex-builds/ and repo root)"
+            exit 1
+          fi
+
+      - name: Upload final_thesis_report.pdf artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: final_thesis_report
+          path: final_thesis_report.pdf
+          if-no-files-found: error
+
+      - name: Parse latest version from CHANGELOG.md
+        id: version
+        if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+        run: |
+          line=$(grep -m1 -E '^## \[[0-9]+\.[0-9]+\.[0-9]+\] - [0-9]{4}-[0-9]{2}-[0-9]{2}' CHANGELOG.md)
+          if [ -z "$line" ]; then
+            echo "::error::Không tìm thấy entry version hợp lệ (## [x.y.z] - yyyy-mm-dd) ở đầu CHANGELOG.md"
+            exit 1
+          fi
+          version=$(echo "$line" | sed -E 's/^## \[([0-9]+\.[0-9]+\.[0-9]+)\].*/\1/')
+          date=$(echo "$line" | sed -E 's/.*- ([0-9]{4}-[0-9]{2}-[0-9]{2}).*/\1/')
+          # Anchor GitHub sinh cho heading "## [x.y.z] - yyyy-mm-dd": bỏ dấu
+          # ngoặc vuông và dấu chấm, đổi khoảng trắng thành '-', hạ thường.
+          # Dùng `tr -d` để xoá '[', ']', '.' — tránh viết bracket-class sed
+          # kiểu `[][.]` (dễ bị parse sai thứ tự ']' trong class, GNU sed báo
+          # "unterminated `s' command" — đã tự tay gặp lỗi này khi test).
+          anchor=$(echo "$line" | sed -E 's/^## //' | tr -d '[].' | tr ' ' '-' | tr '[:upper:]' '[:lower:]')
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "date=$date" >> "$GITHUB_OUTPUT"
+          echo "tag=v$version" >> "$GITHUB_OUTPUT"
+          echo "pdf_name=HLATS-thesis-report-v${version}-${date}.pdf" >> "$GITHUB_OUTPUT"
+          echo "anchor=$anchor" >> "$GITHUB_OUTPUT"
+
+      - name: Rename PDF to versioned release filename
+        if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+        run: cp final_thesis_report.pdf "${{ steps.version.outputs.pdf_name }}"
+
+      - name: Check if release tag already exists
+        id: check_tag
+        if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+        run: |
+          if git ls-remote --exit-code --tags origin "refs/tags/${{ steps.version.outputs.tag }}" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Extract short description for release notes
+        id: notes
+        if: (github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch') && steps.check_tag.outputs.exists == 'false'
+        run: |
+          # Header luôn có 1 dòng trống ngay sau nó trước khi vào đoạn tóm tắt
+          # -> bỏ qua dòng trống đó trước, chỉ dừng khi gặp dòng trống tiếp
+          # theo (kết thúc đoạn tóm tắt, trước khi vào "### Added/Fixed/...").
+          summary=$(awk -v ver="${{ steps.version.outputs.version }}" '
+            $0 ~ ("^## \\[" ver "\\]") { found=1; next }
+            found && !started && NF==0 { next }
+            found && NF>0 { started=1; line = line $0 " "; next }
+            started && NF==0 { exit }
+            END { print line }
+          ' CHANGELOG.md)
+          {
+            echo "summary<<NOTES_EOF"
+            echo "$summary"
+            echo "NOTES_EOF"
+          } >> "$GITHUB_OUTPUT"
+      - name: Create GitHub Release
+        if: (github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch') && steps.check_tag.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.version.outputs.tag }}
+          RELEASE_DATE: ${{ steps.version.outputs.date }}
+          RELEASE_PDF: ${{ steps.version.outputs.pdf_name }}
+          RELEASE_SUMMARY: ${{ steps.notes.outputs.summary }}
+          CHANGELOG_URL: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.sha }}/CHANGELOG.md#${{ steps.version.outputs.anchor }}
+        run: |
+          gh release create "$RELEASE_TAG" \
+            "$RELEASE_PDF" \
+            --target "${{ github.sha }}" \
+            --title "$RELEASE_TAG — $RELEASE_DATE" \
+            --notes "$RELEASE_SUMMARY
+
+          Chi tiết đầy đủ: $CHANGELOG_URL"

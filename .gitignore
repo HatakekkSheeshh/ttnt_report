@@ -1,0 +1,45 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.pdf
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.xdv
+
+# Build output directory
+tex-builds/
+
+# Temporary and swap files
+*.swp
+*.swo
+*~
+*.tmp
+.DS_Store
+Thumbs.db
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.vscode-evals.log
+
+# Node/npm (if used for any build tools)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Python (if used for any scripts)
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/

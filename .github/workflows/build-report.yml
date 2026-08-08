@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   build:
-    name: Build final_thesis_report.pdf
+    name: Build 2352344-internship-report.pdf
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -35,22 +35,22 @@ jobs:
           latexmk_shell_escape: false
           args: -pdf -outdir=tex-builds -halt-on-error -interaction=nonstopmode -file-line-error
 
-      - name: Collect PDF as final_thesis_report.pdf
+      - name: Collect PDF as 2352344-internship-report.pdf
         run: |
           if [ -f tex-builds/main.pdf ]; then
-            cp tex-builds/main.pdf final_thesis_report.pdf
+            cp tex-builds/main.pdf 2352344-internship-report.pdf
           elif [ -f main.pdf ]; then
-            cp main.pdf final_thesis_report.pdf
+            cp main.pdf 2352344-internship-report.pdf
           else
             echo "::error::latexmk did not produce main.pdf (checked tex-builds/ and repo root)"
             exit 1
           fi
 
-      - name: Upload final_thesis_report.pdf artifact
+      - name: Upload 2352344-internship-report.pdf artifact
         uses: actions/upload-artifact@v7
         with:
-          name: final_thesis_report
-          path: final_thesis_report.pdf
+          name: 2352344-internship-report
+          path: 2352344-internship-report.pdf
           if-no-files-found: error
 
       - name: Parse latest version from CHANGELOG.md
@@ -78,7 +78,7 @@ jobs:
 
       - name: Rename PDF to versioned release filename
         if: github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch'
-        run: cp final_thesis_report.pdf "${{ steps.version.outputs.pdf_name }}"
+        run: cp 2352344-internship-report.pdf "${{ steps.version.outputs.pdf_name }}"
 
       - name: Check if release tag already exists
         id: check_tag

@@ -289,6 +289,14 @@ Because all internal agents at GreenNode currently operate without virtual envir
         \end{itemize}
     \end{itemize}
 
+    \item \textbf{Hypervisor-Based Isolation}
+    \begin{itemize}
+        \item Studied hypervisor-based runtimes, where each sandbox runs inside a lightweight virtual machine instead of sharing the host kernel directly.
+        \item Compared Firecracker-based \texttt{kata-fc} and QEMU-based \texttt{kata-qemu} with OS-level containers and gVisor.
+        \item Evaluated the stronger VM-level security boundary for untrusted agent code, together with the additional virtualization overhead.
+        \item Analyzed the trade-off: hypervisor runtimes generally provide stronger isolation but require more memory and have higher startup latency than ordinary containers.
+    \end{itemize}
+
     \item \textbf{Benchmark Design and Execution}
     \begin{itemize}
         \item Designed benchmark suite:

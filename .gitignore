@@ -13,6 +13,10 @@
 *.lot
 *.xdv
 
+# Keep source PDFs used by the report
+!Images/*.pdf
+!Images/**/*.pdf
+
 # Build output directory
 tex-builds/
 
@@ -31,15 +35,18 @@ Thumbs.db
 *.sublime-workspace
 .vscode-evals.log
 
-# Node/npm (if used for any build tools)
+# Node/npm (if used for build tools)
 node_modules/
 package-lock.json
 yarn.lock
 
-# Python (if used for any scripts)
+# Python (if used for scripts)
 __pycache__/
 *.pyc
 *.pyo
 *.egg-info/
 .venv/
 venv/
+
+# Local analysis/cache directories
+.codegraph/

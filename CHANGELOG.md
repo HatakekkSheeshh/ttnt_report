@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented in this file.
 
+## [1.0.1] - 2026-08-09
+
+Updated the English internship report with additional container-runtime and hypervisor analysis.
+
+### Added
+
+- Explicit comparison of OS-level containers, gVisor, Firecracker, and QEMU-based hypervisor isolation.
+- Discussion of VM-level security boundaries, startup latency, and memory-overhead trade-offs.
+
 ## [1.0.0] - 2026-08-09
 
 Initial release of the English internship report for the AI Applied Engineer internship at GreenNode.

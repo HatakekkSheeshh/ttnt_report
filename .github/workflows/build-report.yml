@@ -73,7 +73,7 @@ jobs:
           echo "version=$version" >> "$GITHUB_OUTPUT"
           echo "date=$date" >> "$GITHUB_OUTPUT"
           echo "tag=v$version" >> "$GITHUB_OUTPUT"
-          echo "pdf_name=HLATS-thesis-report-v${version}-${date}.pdf" >> "$GITHUB_OUTPUT"
+          echo "pdf_name=2352344-internship-report-v${version}-${date}.pdf" >> "$GITHUB_OUTPUT"
           echo "anchor=$anchor" >> "$GITHUB_OUTPUT"
 
       - name: Rename PDF to versioned release filename

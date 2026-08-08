@@ -92,7 +92,7 @@ jobs:
 
       - name: Extract short description for release notes
         id: notes
-        if: (github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch') && steps.check_tag.outputs.exists == 'false'
+        if: (github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch') && steps.check_tag.outputs.exists == 'false'
         run: |
           # Header luôn có 1 dòng trống ngay sau nó trước khi vào đoạn tóm tắt
           # -> bỏ qua dòng trống đó trước, chỉ dừng khi gặp dòng trống tiếp
@@ -110,7 +110,7 @@ jobs:
             echo "NOTES_EOF"
           } >> "$GITHUB_OUTPUT"
       - name: Create GitHub Release
-        if: (github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch') && steps.check_tag.outputs.exists == 'false'
+        if: (github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch') && steps.check_tag.outputs.exists == 'false'
         env:
           GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: ${{ steps.version.outputs.tag }}

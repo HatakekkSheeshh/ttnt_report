@@ -1,916 +1,709 @@
 % \subsection{Overview}
 
-\subsection{Introduction to GOSU Corporation}
+\subsection{Introduction to Greennode Corporation}
 
 \subsubsection{General Information}
 
-GOSU Online Corporation, founded in 2012, operates in information technology and digital content, with a particular focus on producing, developing, and publishing online games. As one of the leading game publishers in Vietnam, GOSU currently has three representative offices in Hanoi, Hue, and Ho Chi Minh City. The company has successfully operated many well–known titles such as \emph{Cửu Âm Chân Kinh}, \emph{Con Đường Tơ Lụa Origin Mobile}, and \emph{Ngạo Kiếm Vô Song Origin}. GOSU received the SME100 Award recognizing outstanding SMEs in Asia and ranked among the Top 6 largest game publishers in Vietnam at GameVerse 2024. Beyond publishing, GOSU also focuses on “Make in Vietnam” game production and is gradually expanding Vietnamese game products to international markets (Website: \url{https://gosucorp.vn/vi}).
+GreenNode is a Vietnam-based sovereign, high-performance AI cloud provider and a member of VNG Digital Business, under VNG Corporation, Vietnam's first technology unicorn, founded in 2004. In late 2025, VNG merged its cloud computing unit, VNG Cloud, with its AI infrastructure unit, GreenNode, into a single unified AI cloud brand, and this positioned it as one of the few platforms in Vietnam offering both conventional cloud and high-performance AI cloud on a unified ecosystem, letting customers train, fine-tune, and deploy AI models on the same infrastructure. As a preferred NVIDIA Cloud Service Partner in Southeast Asia, GreenNode offers enterprises high-performance NVIDIA H100 GPU infrastructure across data centers in Vietnam and Thailand, and it has supported over 1,000 domestic and international enterprises with a strong presence in markets such as the United States, MENA, and APAC, alongside active operations in Vietnam, Thailand, and Singapore. Its portfolio spans cloud infrastructure, AI/ML services, and data management and process-automation solutions, including PaaS offerings like vDB, Kafka, and VKS, as well as its in-house GreenNode IDP (Intelligent Document Processing) solution, which combines OCR, Generative AI, and LLMs to extract and validate data from complex documents.
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.5\linewidth]{Images/logo_gosu.png}
-    \caption{GOSU company logo}
+    \includegraphics[width=0.5\linewidth]{Images/greennode.jpeg}
+    \caption{Greennode company logo}
     \label{fig:logo}
 \end{figure}
 
 \subsubsection{Business Areas}
 
-GOSU Corp focuses on the following main areas:
+GreenNode focuses on the following main areas:
 \begin{itemize}
-    \item \textbf{Game publishing:} The company’s core business, including licensing popular international games, localizing them for Vietnam, and publishing in the domestic market.
+    \item \textbf{AI Cloud Services:} The company's core business, providing sovereign, high-performance AI cloud infrastructure and enterprise AI/ML services, built on NVIDIA GPU infrastructure (H100), with platform services such as vDB, Kafka, and VKS, enabling customers to train, fine-tune, and deploy AI models.
 
-    \item \textbf{Game production:} Investment in the in–house development of high–quality “hardcore” games bearing a Vietnamese identity.
+    \item \textbf{Data Management and Automation:} Investment in developing solutions for data management, process automation, and intelligent document processing (e.g., GreenNode IDP, combining OCR, Generative AI, and LLMs to process unstructured documents).
 
-    \item \textbf{Technology ecosystem:} GOSU has built and developed an ecosystem with tens of millions of users, including the GOSU Pay electronic payment gateway.
+    \item \textbf{Strategic Partnerships:} GreenNode is a preferred NVIDIA Cloud Service Partner (CSP) in Southeast Asia and has supported over 1,000 domestic and international enterprises across banking, insurance, securities, retail, and technology sectors.
 
-    \item \textbf{Investment:} Participation in technology startup investments, such as OplaCRM, to broaden the portfolio and support promising tech companies.
-
-    \item \textbf{International markets:} GOSU’s services have been released in more than 10 Asian countries, demonstrating expansion beyond the domestic market.
+    \item \textbf{International markets:} GreenNode operates data centers and services in Vietnam, Thailand, and Singapore, with an expanding customer presence in the United States, MENA, and APAC regions.
 \end{itemize}
 
 \subsubsection{Corporate Culture and Work Environment}
 
-At GOSU, corporate culture is not just a set of rules on paper but a source of inspiration for daily activities. The company encourages a creative and flexible working spirit, enabling individuals to proactively adapt to the ever–changing game market. Team spirit is considered the bond that unites all members, creating a strong collective working toward common goals.
+At GreenNode, corporate culture is not just a set of rules on paper but a source of inspiration for daily activities. The company encourages a creative and flexible working spirit, enabling individuals to proactively adapt to the fast-evolving AI and cloud computing landscape. Team spirit is considered the bond that unites all members, creating a strong collective working toward common goals.
 
-Thanks to these core values, GOSU’s work environment is youthful, dynamic, and professional. Employees work in an open space where ideas are heard and respected. In addition to attractive benefits, the company emphasizes team–building and annual events, turning the workplace into a true “family,” where everyone works with passion and enthusiasm.
-
+Thanks to these core values, GreenNode's work environment is youthful, dynamic, and professional. Employees work in an open space where ideas are heard and respected. In addition to attractive benefits, the company emphasizes team-building and annual events, turning the workplace into a true "family," where everyone works with passion and enthusiasm.
 \subsection{Internship Content}
 
 \subsubsection{Objectives}
 
-The internship topic is \emph{“Applying AI to Churn Prediction and Player Clustering for Personalized Game Marketing.”} The goal is to build AI models that analyze player behavior to early predict churn and cluster players by spending patterns, preferences, and playtime. This supports the company in deploying retention and personalized marketing strategies such as gifting, suggesting engaging quests, and optimizing promotional content, top–up packages, and item rewards.
+The internship topic is \emph{“AI Innovation for Internal Product Development.”} The goal is to build an AI-powered internal product that brings measurable value and drives adoption across the organization. This initiative aims to establish sustainable AI practices within the working environment and transform GreenNode into an AI-native organization, embedding intelligent automation and data-driven decision-making into core business processes and operational workflows.
 
-\subsubsection{Weekly Tasks}
+\subsubsection{Detailed Weekly Tasks}
 
-\subsubsubsection{Week 1}
+\subsubsubsection{Week 1: Onboarding and LLM Fundamentals}
 
 \subsubsubsection*{Task Description}
 
 \begin{itemize}
-    \item \textbf{Onboarding at GOSU}
+    \item \textbf{Team Onboarding and Environment Setup}
     \begin{itemize}
-        \item Attended the first meeting with the internship supervisor and IT team members.
-
-        \item Got an introduction to GOSU’s operating model, currently running titles, development directions, and the role of data analytics in operations and marketing.
-
-        \item Learned the team’s basic workflow: receiving analysis requests, communicating via the Huly app, and the process of collecting–processing–analyzing data and reporting results.
+        \item Attended initial orientation meeting with internship supervisor and team members.
+        \item Learned team SOPs, development tools (Git, IDEs, CI/CD pipelines), communication channels, and code review processes.
+        \item Aligned internship KPIs with supervisor: project scope, deliverables, and success criteria for the 3-month program.
+        \item Set up development environment: cloned repositories, configured local development stack.
     \end{itemize}
 
-    \item \textbf{Studying the concept of “Churn”}
+    \item \textbf{Overview of Large Language Models}
     \begin{itemize}
-        \item Reviewed internal documents and academic sources to understand churn in gaming: definition and measurement (login time, engagement level, spending behavior, etc.).
-
-        \item Studied common indicators for churn prediction such as DAU/MAU, retention rate, session length, in–game purchase frequency, …
-
-        \item Explored main causes of churn: unengaging content, imbalanced experience, competition, and misaligned promotions.
-    \end{itemize}
-
-    \item \textbf{Studying the concept of “Clustering”}
-    \begin{itemize}
-        \item Learned popular clustering algorithms: K–Means, Hierarchical Clustering, DBSCAN.
-
-        \item Researched how to cluster players by characteristics such as play frequency, spending behavior, play style, and stickiness.
-
-        \item Reviewed industry case studies on using clustering to optimize personalized marketing.
-    \end{itemize}
-
-    \item \textbf{Exploring the company’s ElasticSearch data storage}
-    \begin{itemize}
-        \item Studied ElasticSearch architecture and why it is used to store player behavioral data.
-
-        \item Learned key concepts: Index, Document, Mapping, Query DSL.
-
-        \item Practiced data retrieval with Kibana for churn and clustering analysis.
-
-        \item Examined real data structures of sample indices to understand how login, in–game behaviors, and transactions are stored.
-    \end{itemize}
-
-    \item \textbf{Learning the target game (Con Đường Tơ Lụa Origin Mobile)}
-    \begin{itemize}
-        \item Understood the context: a mobile MMORPG published by GOSU, based on the well–known \emph{Silk Road} franchise.
-
-        \item Studied gameplay mechanics: quest system, classes, PvP/PvE, trading, guilds, and item systems.
-
-        \item Identified potential churn factors: quest difficulty, time requirements for activities, player competition, item costs.
-
-        \item Investigated common player behaviors: activity times, spending level, login frequency, and churn–prone stages.
-
-        \item Linked this information with actual data to orient subsequent analysis.
-    \end{itemize}
-    
-    \item \textbf{Linking theory with GOSU practice}
-    \begin{itemize}   
-        \item Analyzed sample datasets (provided by the company) to observe characteristic behaviors of high–risk churn groups.
-
-        \item Discussed with the mentor about Vietnam–specific factors and the characteristics of \emph{Con Đường Tơ Lụa Origin Mobile} in churn and clustering analysis.
+        \item Studied foundational LLM concepts: what are LLMs, their role in modern AI, and typical architectures.
+        \item Explored Transformer architecture: multi-head attention, positional encoding, and the encoder-decoder structure.
+        \item Understood how LLMs generate text: token prediction, sampling strategies, and inference mechanisms.
+        \item Reviewed practical LLM applications: chatbots, code generation, reasoning, and tool use.
     \end{itemize}
 \end{itemize}
 
 \subsubsubsection*{Results / Knowledge Gained}
 
 \begin{itemize}
-    \item Gained a clear understanding of churn and its importance in online gaming.
-
-    \item Learned indicators and factors affecting player churn.
-
-    \item Built basic knowledge about \emph{Con Đường Tơ Lụa Origin Mobile}: gameplay, player behaviors, and churn drivers.
-
-    \item Understood how to apply clustering to segment players and the goal of segmentation for personalized marketing.
-
-    \item Acquired fundamentals of ElasticSearch: data structure, storage, and retrieval for analysis.
-
-    \item Learned to use Kibana for basic queries to extract player data.
-
-    \item Obtained an overview of the data analysis workflow in practice at GOSU.
-
-    \item Established the foundation for next steps: building churn prediction and player clustering models on real data.
+    \item Gained clear understanding of team workflows, tools, and expectations.
+    \item Understood the foundation of LLM technology and how they work internally.
+    \item Grasped Transformer mechanics: attention mechanisms and how LLMs process and generate text.
+    \item Established the foundation for subsequent agent development tasks.
+    \item Set clear project goals and alignment with supervisor for the internship period.
 \end{itemize}
 
-\subsubsubsection{Week 2}
+\subsubsubsection{Week 2: Agent Frameworks Exploration}
+
 \subsubsubsection*{Task Description}
 
 \begin{itemize}
-    \item \textbf{Getting familiar with real data and querying from ElasticSearch}
+    \item \textbf{Established Weekly Meeting Cadence}
     \begin{itemize}
-        \item Used Kibana and Query DSL to extract data from indices related to player behaviors in the most recent month.
-
-        \item Identified the main data tables needed for churn and clustering analysis.
+        \item Started regular weekly synchronization meetings with supervisor (typically 1-2 hours).
+        \item Set meeting agenda: reviewing completed tasks, discussing blockers, planning next steps.
+        \item Established communication protocols for urgent issues and weekly progress updates.
     \end{itemize}
 
-    \item \textbf{Collecting and processing player behavioral data}
+    \item \textbf{Survey of Agent Frameworks}
     \begin{itemize}
-        \item \textbf{Login}
-        \begin{itemize}
-            \item Collected number of logins, login frequency, first and last login time.
-
-            \item Supported the calculation of retention metrics D1, D5, D7.
-        \end{itemize}
-
-        \item \textbf{Register}
-        \begin{itemize}
-            \item Retrieved registration time, registration channel, and basic account information.
-
-            \item Assessed the stickiness of new players compared to the current player base.
-        \end{itemize}
-
-        \item \textbf{Pay}
-        \begin{itemize}
-            \item Collected number of top–ups, total value, and payment methods.
-
-            \item Classified players by spending level (free–to–play, low/mid/high spender).
-        \end{itemize}
-
-        \item \textbf{Item Upgrade}
-        \begin{itemize}
-            \item Recorded successful/failed upgrade attempts and item level after upgrades.
-
-            \item Identified the relationship between upgrade activity and player engagement.
-        \end{itemize}
-
-        \item \textbf{User Items}
-        \begin{itemize}
-            \item Extracted the list of owned items, levels, rarity, and state.
-        \end{itemize}
-
-        \item \textbf{Item usage and trading activities}
-        \begin{itemize}
-            \item \textbf{Purchase:} counted transactions and most purchased item types.
-
-            \item \textbf{Use:} recorded the most frequently used items and usage frequency.
-
-            \item \textbf{Auction:} collected data on auctions participated/won/lost and successful selling prices.
-        \end{itemize}
+        \item Studied LangGraph: workflow definition, state management, and node-based execution model.
+        \item Explored ReAct pattern: reasoning + acting loop, how agents decompose tasks and call tools.
+        \item Investigated reflection and self-critique patterns: how agents evaluate and improve their own outputs.
+        \item Examined tool-use design: defining tool interfaces, argument validation, and error handling.
+        \item Compared trade-offs: flexibility vs. simplicity, performance vs. developer experience.
     \end{itemize}
 
-    \item \textbf{Cleaning and standardizing data}
+    \item \textbf{Proof-of-Concept Implementations}
     \begin{itemize}
-        \item Removed duplicate records or those missing player IDs.
-
-        \item Standardized timestamps to a consistent timezone (UTC+7).
-
-        \item Joined tables to build a complete behavioral profile for each player. 
-    \end{itemize}
-
-    \item \textbf{Preliminary analysis (EDA)}
-    \begin{itemize}
-        \item \textbf{Login}
-        \begin{itemize}
-            \item Computed total login days per player in the month; plotted distributions to identify groups with low vs. high activity.
-
-            \item Determined average weekly login frequency to classify: highly–active (near daily), occasional, near–inactive.
-        \end{itemize}
-
-        \item \textbf{Register}
-        \begin{itemize}
-            \item Grouped new players by registration week (week 1–4).
-
-            \item Computed retention D1, D5, D7 for each group to evaluate new–player retention.
-
-            \item Compared behaviors of new players (end–of–month cohorts) with those registered earlier.
-        \end{itemize}
-
-        \item \textbf{Pay}
-        \begin{itemize}
-            \item Plotted distributions of top–up count and total amount per player.
-
-            \item Identified Free–to–Play, Low, Mid, and High Spenders based on thresholds.
-
-            \item Explored preliminary correlation between login frequency and spending.
-        \end{itemize}
-
-        \item \textbf{Item Upgrade}
-        \begin{itemize}
-            \item Counted successful/failed upgrades per player.
-
-            \item Identified players who upgrade frequently and the relation with spending.
-        \end{itemize}
-
-        \item \textbf{User Items}
-        \begin{itemize}
-            \item Analyzed item distributions by rarity and level.
-
-            \item Identified players owning many high–value items.
-        \end{itemize}
-
-        \item \textbf{In–game Activities}
-        \begin{itemize}
-            \item \textbf{Purchase items:} number of purchases and most purchased types.
-
-            \item \textbf{Use items:} most used items and their frequency.
-
-            \item \textbf{Auctions:} number of auctions, win rate, and average selling price.
-        \end{itemize}
-
-        \item \textbf{Identifying behavior groups related to churn}
-        \begin{itemize}
-            \item Low logins, no spending, little interaction $\rightarrow$ high churn risk.
-
-            \item Spending but few logins $\rightarrow$ likely to “leave early despite investment”.
-
-            \item Highly active (many upgrades, many trades, much interaction) $\rightarrow$ high long–term potential.
-        \end{itemize}
+        \item Built minimal prototypes with LangGraph to understand state flow and callbacks.
+        \item Implemented a simple ReAct agent with a mock tool (e.g., simple calculator or search function).
+        \item Tested reflection loop with temperature settings, prompt variations, and evaluation metrics.
     \end{itemize}
 \end{itemize}
 
 \subsubsubsection*{Results / Knowledge Gained}
 
 \begin{itemize}
-    \item Became proficient in querying multiple tables from ElasticSearch for analysis.
-
-    \item Built a player behavior dataset including:
-    \begin{itemize}    
-        \item Logins, registrations.
-
-        \item Payment history.
-
-        \item Item upgrade activities.
-
-        \item Owned item list.
-
-        \item Purchases, uses, and auctions.
-    \end{itemize}
-    \item Gained clear understanding of behaviors and engagement levels of \emph{Con Đường Tơ Lụa Origin Mobile} players.
-
-    \item Produced a clean dataset ready for churn and clustering analysis.
+    \item Established effective communication with supervisor; weekly meetings became a key feedback mechanism.
+    \item Compared major agent frameworks and understood their architectural strengths.
+    \item Grasped ReAct, reflection, and tool-use design patterns and when each is appropriate.
+    \item Built practical intuition through small prototype experiments.
+    \item Ready to select a framework and proceed to deeper implementation.
 \end{itemize}
 
-\subsubsubsection{Week 3}
+\subsubsubsection{Week 3: Agent Framework Deep Dive and Design}
+
 \subsubsubsection*{Task Description}
 
 \begin{itemize}
-    \item \textbf{Labeling Churn}
+    \item \textbf{Framework Selection and Mastery}
     \begin{itemize}
-        \item Agreed with mentor on a definition suitable for data and objectives (a player is considered churned if they do not log in for 7 consecutive days up to the analysis date).
-
-        \item Wrote a script to compute days since last login for each player and labeled:
-        \begin{itemize}
-            \item \texttt{Churn = 1} if consecutive non–login days $\geq$ 7.
-
-            \item \texttt{Churn = 0} if logged in within the last 7 days.
-        \end{itemize}
-    \end{itemize}
-    
-    \item \textbf{Data Normalization}
-    \begin{itemize}        
-        \item Ensured unified measurement units.
-
-        \item Converted categorical variables to numeric (one–hot) for modeling.
-
-        \item \textbf{Handling skewed data:}
-        \begin{itemize}
-            \item Checked spending–related variables for skewness (since not all players spend).
-
-            \item Applied the Yeo–Johnson transform (instead of log) to make distributions closer to normal, improving model learning.
-        \end{itemize}
-
-        \item \textbf{Feature scaling:}
-        \begin{itemize}
-            \item Applied \texttt{StandardScaler} after transformation to put variables on comparable scales.
-        \end{itemize}
-    \end{itemize}
-
-    \item \textbf{Feature Engineering}
-    \begin{itemize}
-        \item From login data:
-        \begin{itemize}
-            \item Number of login days in the month.
-            \item Ratio of login days to account age (days).
-        \end{itemize}
-
-        \item From payment data:
-        \begin{itemize}
-            \item Total amount, average top–up per play session, days since last top–up.
-        \end{itemize}
-
-        \item From item \& activity data:
-        \begin{itemize}
-            \item Total item upgrade attempts, success rate.
-            \item Counts of purchases/uses/auctions.
-        \end{itemize}
-
-        \item Aggregate indices:
-        \begin{itemize}
-            \item “Activity” index = combined points from login, transactions, upgrades.
-            
-            \item “Engagement” index = combined points from continuous days, retention, interactions.
-        \end{itemize}
-
-        \item \textbf{Data verification}
-        \begin{itemize}
-            \item Ensured valid record counts after processing.
-            
-            \item Checked churn rate before/after labeling for reasonableness.
-        \end{itemize}
-    \end{itemize}
-
-    \item \textbf{Organized an AI Seminar for the IT team}
-    \begin{itemize}
-        \item \textbf{Objectives:}
-        \begin{itemize}
-            \item Introduce AI concepts and applications in technology.
-
-            \item Provide foundational knowledge for the IT team to apply or study further.
-        \end{itemize}
-
-        \item \textbf{Seminar preparation:}
-        \begin{enumerate}
-            \item \emph{Introduction to AI} – what AI is, its history, and role in modern tech.
-
-            \item \emph{Types of AI and Applications} – categories and use cases.
-
-            \item \emph{AI Workflow and How to Learn AI} – data $\rightarrow$ processing $\rightarrow$ training $\rightarrow$ deployment and a self–study path.
-
-            \item \emph{Supervised Learning Explained} – foundations of Linear and Logistic Regression.
-            \item \emph{Demo} – a simple churn prediction demo on a sample dataset.
-        \end{enumerate}
-
-        \item \textbf{Seminar delivery:}
-        \begin{itemize}
-            \item Presented slides.
-
-            \item Answered questions.
-
-            \item Shared materials and learning links; conducted a quiz.
-        \end{itemize}
-
+        \item Chose primary framework (e.g., LangGraph) based on project requirements and team preferences.
+        \item Studied advanced features: custom state types, multi-agent patterns, streaming, and error recovery.
+        \item Read framework documentation and examined real-world example projects.
     \end{itemize}
 
     \begin{figure}[!h]
-        \centering
-        \begin{minipage}[b]{0.49\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]{Images/page1.jpg}
-            % \caption{Image 1}
-            \label{fig:image1}
-        \end{minipage}
-        \hfill
-        \begin{minipage}[b]{0.49\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]{Images/page2.jpg}
-            % \caption{Image 2}
-            \label{fig:image2}
-        \end{minipage}
-        \caption{Seminar slides}
+    \centering
+    \includegraphics[width=0.4\linewidth]{Images/langgraph_logo.png}
+    \caption{LangGraph Agent Framework}
+    \label{fig:langgraph}
     \end{figure}
-\end{itemize}
 
-
-\subsubsubsection*{Results / Knowledge Gained}
-\begin{itemize}
-    \item Produced a clean, consistent dataset ready for analysis and modeling.
-
-    \item Clearly defined churn labels based on the 7–day inactivity rule.
-
-    \item Engineered a rich feature set enabling more effective churn prediction and player clustering.
-
-    \item Built a standardized dataset suitable for clustering and AI modeling in subsequent weeks.
-
-    \item Reinforced AI knowledge through seminar preparation and delivery.
-
-    \item Improved technical communication skills.
-
-    \item Prepared the IT team to understand AI and support related projects in the future. 
-\end{itemize}
-
-\subsubsubsection{Week 4}
-\subsubsubsection*{Task Description}
-
-\subsubsubsection*{A. Training churn prediction models}
-
-\begin{itemize}
-    \item \textbf{Training data preparation}
+    \item \textbf{Observability and Monitoring}
     \begin{itemize}
-        \item Used the preprocessed and standardized dataset from Week 3.
-
-        \item Split data by spending behavior:
+        \item \textbf{Jaeger Distributed Tracing for Agent Behavior:}
         \begin{itemize}
-            \item \textbf{Payers:} players with at least one top–up transaction.
-
-            \item \textbf{Non–Payers:} players who have never spent.
+            \item Studied Jaeger for distributed tracing of agent execution and decision flow.
+            \item Understood how to instrument agent code: trace LLM calls, tool invocations, and decision loops.
+            \item Set up Jaeger to observe agent behavior: decision latency, reasoning steps, reflection cycles.
+            \item Integrated LLM call tracing: input tokens, output tokens, model latency, prompt engineering impact.
+            \item Tracked tool execution: invocation order, results, error handling, performance metrics.
         \end{itemize}
-
-        \item \textbf{Rationale for the split:}
-        \begin{itemize}
-            \item The two groups often show different behavior patterns; training separate models improves prediction accuracy.
-
-            \item Avoids spending–related features “contaminating” predictions for non–spenders.
-        \end{itemize}
-
-        \item \textbf{For each group:}
-        \begin{enumerate}
-            \item \textbf{Select appropriate features:}
-            \begin{itemize}
-                \item \textbf{Payers:} login frequency, days since last login, total top–up amount, days since last top–up, item upgrade counts, activity/engagement indices, …
-
-                \item \textbf{Non–Payers:} login frequency, days since last login, item upgrade counts, activity/engagement indices, …
-            \end{itemize}
-
-            \item Split into Train/Test with an 80:20 ratio.
-        \end{enumerate}
-    \end{itemize}
-     
-    \item \textbf{Training multiple models}
-    \begin{itemize}
-        \item Logistic Regression – interpretable baseline.
-
-        \item Random Forest (RF) – robust for many features, little preprocessing.
-
-        \item XGBoost – strong for tabular data with high performance.
-
-        \item LightGBM – fast training, good for large data.
-
-        \item CatBoost – handles categorical features well and reduces overfitting.
-
-        \item \textbf{Procedure:}
-        \begin{enumerate}
-            \item For each model, apply \texttt{RandomizedSearchCV} to find the best hyperparameters on the training set.
-
-            \item Evaluate each tuned model on the test set.
-
-            \item Save tuned models for inclusion in a Voting Classifier.
-        \end{enumerate}
-    \end{itemize}
-
-    \item \textbf{Ensembling (Voting Classifier)}
-    \begin{itemize}
-        \item Combined predictions from multiple models.
-
-        \item \textbf{Hard Voting:} choose the label predicted by the majority.
-    \end{itemize}
-
-    \item \textbf{Model evaluation}
-    \begin{itemize}
-        \item Metrics: Accuracy, Precision, Recall, F1–score, ROC–AUC.
-
-        \item Compared single models with the Voting model:
-        \begin{itemize}
-            \item Voting improved stability and reduced the risk of misclassification on edge cases.
-        \end{itemize}
-
-        \item Analyzed feature importance from tree–based models (RF, XGBoost, LightGBM, CatBoost) to identify the most influential churn drivers.
-    \end{itemize}
-
-\end{itemize}
-
-\subsubsubsection*{B. Player clustering}
-\begin{itemize}
-    \item \textbf{Preparing clustering data}
-    \begin{itemize}
-        \item Removed the churn label as this is an unsupervised task.
-
-        \item Identified and grouped behavioral features:
-        \begin{itemize}
-            \item Login \& retention (Engagement)
-            \item Spending (Monetization)
-            \item In–game activities
-            \item Inventory \& power
-        \end{itemize}
-    \end{itemize}
-
-    \item \textbf{Running multiple clustering algorithms}
-    \begin{itemize}
-        \item K–Means – chose the optimal number of clusters via Elbow \& Silhouette.
-
-        \item DBSCAN – detected anomalies and noise points.
-
-        \item Gaussian Mixture Model (GMM) – soft clustering with flexible cluster shapes.
-    \end{itemize}
-
-    \item \textbf{Evaluation \& interpretation}
-    \begin{itemize}
-        \item Described representative behaviors of each cluster across the four feature groups.
-
-        \item Compared churn rates across clusters to identify “high–risk” ones.
-    \end{itemize}
-   
-\end{itemize}
-
-\subsubsubsection*{C. Visualization of results}
-\begin{itemize}
-    \item \textbf{Churn prediction models}
-    \begin{itemize}
-        \item Plotted confusion matrices.
-
-        \item Plotted ROC curves and computed AUC to compare models.
-
-        \item Presented feature importance to highlight key drivers.
-    \end{itemize}
-
-    \item \textbf{Player clustering}
-    \begin{itemize}
-        \item Used PCA for dimensionality reduction and 2D visualization.
-
-        \item Plotted average feature comparisons per cluster (radar charts, bar charts).
-
-        \item Illustrated player distribution by cluster and its relation to churn rate.
-    \end{itemize}
-\end{itemize}
-
-\subsubsubsection*{Results / Knowledge Gained}
-\begin{itemize}
-    \item Built and compared multiple churn models for both Payers and Non–Payers:
-    \begin{itemize}
-        \item Logistic Regression, Random Forest, XGBoost, LightGBM, CatBoost.
-
-        \item Voting Classifier (hard voting) yielded the most stable and accurate results.
-    \end{itemize}
-    
-    \item Hyperparameter tuning with \texttt{RandomizedSearchCV} improved performance.
-
-    \item Identified the most important churn factors for each player group.
-
-    \item Successfully applied K–Means, DBSCAN, and GMM to cluster players by behavioral features.
-
-    \item Identified distinctive behavior groups and high–risk churn clusters → a basis for personalized marketing strategies.
-
-    \item Completed a set of visual dashboards to clearly explain results to the team.
-\end{itemize}
-
-\subsubsubsection{Week 5}
-\subsubsubsection*{Task Description}
-
-% \subsubsubsection*{A. Present results to stakeholders.}
-\begin{itemize}
-    \item \textbf{Presented results to stakeholders}
-    \begin{itemize}
-        \item \textbf{Prepared summary slides}
-        \begin{itemize}
-            \item Research objective: churn prediction \& player clustering for personalized marketing.
-    
-            \item Project workflow: data collection $\rightarrow$ preprocessing $\rightarrow$ training $\rightarrow$ clustering $\rightarrow$ analysis.
-    
-            \item Model performance metrics for churn.
-    
-            \item Clustering results.
-    
-            \item Visualizations.
-    
-            \item Marketing strategy recommendations.
-        \end{itemize}
-        
-        \item \textbf{Presentation session}
-        \begin{itemize}
-            \item Attendees: IT team and game operations team.
-    
-            \item Explained real–world meaning of each result.
-
-            \item Emphasized “high–risk” and “high–value” player groups for retention campaigns.
-        \end{itemize}
-    \end{itemize}
-
-    \item \textbf{Designed a data pipeline for the dashboard}
-    \begin{enumerate}
-        \item \textbf{Goal:} build a web dashboard for the operations team to monitor:
-        \begin{itemize}
-            \item Churn rate over time.
-
-            \item Player distribution by cluster.
-
-            \item List of players in target marketing segments.
-        \end{itemize}
-
-        \item \textbf{Proposed pipeline}
-        \begin{itemize}
-            \item \textbf{Data Ingestion:} 
-            \begin{itemize}
-                \item Collect logs from ElasticSearch (login, payment, in–game actions).
-
-                \item Schedule a daily cron job to load new data.
-            \end{itemize}
-            
-            \item \textbf{ETL (Extract–Transform–Load):}
-            \begin{itemize}
-                \item Automated cleaning (handle missing values, outliers).
-
-                \item Assign churn labels (>= 7 days inactive).
-                
-                \item Compute behavioral \& financial features.
-                
-                \item Scale \& transform data.
-            \end{itemize}
-
-            \item \textbf{Model Serving:}
-            \begin{itemize}
-                \item Deploy the trained churn model.
-
-                \item Deploy the clustering model.
-
-                \item Store predictions \& cluster labels in a staging database.
-            \end{itemize}
-
-            \item \textbf{Web dashboard:}
-            \begin{itemize}
-                \item Tech stack: Python FastAPI + Streamlit.
-                
-                \item \textbf{Main pages:}
-                \begin{itemize}
-                    \item \textbf{Home Tab:} customer–segment matrix, search/filter, player list, select to view details.
-
-                    \item \textbf{Report Tab:} overall KPIs, churn–rate charts, top–spender analysis, high–risk identification, report export.
-
-                    \item \textbf{User Info Tab:} details for a selected player—engagement, spending, churn risk.
-                \end{itemize}
-
-            \item \textbf{Expected outputs}
-            \begin{itemize}
-                \item Internal dashboard running on the company server.
-
-                \item Browser access, no extra software installation.
-
-                \item Automatic data updates to enable fast marketing actions.
-            \end{itemize}
-            \end{itemize}
-        \end{itemize}
-    \end{enumerate}
-\end{itemize}
-
-\subsubsubsection*{Results / Knowledge Gained}
-\begin{itemize}
-    \item Experience presenting and explaining data–analysis results to multiple audiences.
-
-    \item Understood how to design an end–to–end data pipeline for deploying AI in real monitoring systems.
-
-    \item Recognized key considerations when designing dashboards: data sources, update frequency, UX/UI, and scalability.
-\end{itemize}
-
-\subsubsubsection{Week 6}
-\subsubsubsection*{Task Description}
-\begin{itemize}
-    \item \textbf{Learning FastAPI}
-    \begin{itemize}
-        \item Understood the architecture and how FastAPI works; compared pros/cons with Flask and Django.
-
-        \item Learned endpoint definitions, request/response handling, and integration with JSON and Pydantic models for schema management.
-
-        \item Practiced \texttt{async/await} to optimize API response time for heavy queries.
-    \end{itemize}
-    \newpage
-    \begin{figure}[!h]
-        \centering
-        \includegraphics[width=0.5\linewidth]{Images/fastapi.png}
-        \caption{FastAPI web framework.}
-        \label{fig:placeholder}
-    \end{figure}
-    
-    \item \textbf{Designing \& implementing core APIs for the dashboard}
-    \begin{itemize}
-        \item \textbf{Cluster data API:} returns clusters, player counts, and key characteristics per cluster.
-
-        \item \textbf{Search \& filter API:} supports \texttt{user\_id}/name search; filters by cluster, spending level, or churn risk.
-
-        \item \textbf{Player detail API:} returns (de–identified) profile, interaction history, play behavior, spending, churn label, and cluster label.
-
-        \item \textbf{Overview statistics API:} returns player count, churn rate, cluster distribution, and churn trend.
-
-        \item \textbf{Report export API:} allows CSV/Excel download for deeper marketing analysis.
-    \end{itemize}
-
-    \item \textbf{Connecting APIs to the database}
-    \begin{itemize}
-        \item Connected FastAPI to ElasticSearch for login, payment, and in–game behavior data.
-
-        \item Optimized queries (proper indices, selecting only necessary fields) to reduce latency.
-    \end{itemize}
-
-\end{itemize}
-
-\subsubsubsection*{Results / Knowledge Gained}
-\begin{itemize}
-    \item Achieved basic proficiency with FastAPI and RESTful API development.
-
-    \item Designed APIs meeting dashboard requirements, balancing response speed and payload size.
-
-    \item Understood how to connect the AI system (churn \& clustering models) to APIs for a real–time dashboard.
-\end{itemize}
-
-
-\subsubsubsection{Week 7}
-\subsubsubsection*{Task Description}
-\begin{itemize}
-    \item \textbf{Learning Streamlit}
-    \begin{itemize}
-        \item Understood Streamlit’s mechanism: rendering web UIs from Python and live updates as data changes.
-
-        \item Learned how to combine UI components: sidebar, filters, tables, charts, and tabs.
-
-        \item Explored visualization libraries used in Streamlit (Plotly, Matplotlib, Altair).
+        \item Benefits: real-time visibility into agent behavior, reasoning transparency, and LLM interaction efficiency.
     \end{itemize}
 
     \begin{figure}[!h]
-        \centering
-        \includegraphics[width=0.5\linewidth]{Images/streamlit.png}
-        \caption{Streamlit framework.}
-        \label{fig:placeholder}
+    \centering
+    \includegraphics[width=0.35\linewidth]{Images/Jaeger_logo.png}
+    \caption{Jaeger Distributed Tracing Platform}
+    \label{fig:jaeger}
     \end{figure}
-    
-    \item \textbf{Integrating FastAPI into the dashboard}
+
+    \item \textbf{Agent Architecture Design}
     \begin{itemize}
-        \item Called the Week 6 APIs to fetch clustering data, player details, and overall statistics.
-
-        \item Processed API responses and displayed them per tab requirements:
+        \item Designed a basic two-capability agent:
         \begin{itemize}
-            \item \textbf{Home Tab:} segment matrix, search/filter controls, player list, select–to–view.
+            \item \textbf{Research capability:} gather information, search knowledge bases, retrieve documents.
+            \item \textbf{Self-reflection capability:} evaluate outputs, identify weaknesses, generate improvement suggestions.
+        \end{itemize}
+        \item Defined state structure: input, intermediate thoughts, tool calls, results, final response.
+        \item Mapped out the execution flow: planning $\rightarrow$ tool invocation $\rightarrow$ reflection $\rightarrow$ output.
+        \item Designed tool interfaces: research (query), knowledge store (retrieve), and reflection (evaluate).
+    \end{itemize}
 
-            \item \textbf{Report Tab:} KPIs, churn–rate charts, top–spender table, high–risk list.
+    \item \textbf{Implementation Planning}
+    \begin{itemize}
+        \item Created a detailed technical spec for the basic agent.
+        \item Identified required dependencies, APIs, and external services.
+        \item Planned testing and validation strategy.
+    \end{itemize}
+\end{itemize}
 
-            \item \textbf{User Info Tab:} detailed view for the selected player, including activity charts and churn–risk scores.
+\subsubsubsection*{Results / Knowledge Gained}
+
+\begin{itemize}
+    \item Achieved proficiency with chosen framework; understood advanced patterns.
+    \item Created a solid architectural design for the basic agent with clear responsibilities.
+    \item Defined data flow and state management approach suitable for complex agent behavior.
+    \item Established clear implementation roadmap for the following week.
+\end{itemize}
+
+\subsubsubsection{Week 4: Basic Agent Implementation and Month 1 Review}
+
+\subsubsubsection*{Task Description}
+
+\begin{itemize}
+    \item \textbf{Build and Refine Basic Agent}
+    \begin{itemize}
+        \item Implemented research capability: querying knowledge base, retrieving relevant documents, summarizing findings.
+        \item Implemented self-reflection capability: analyzing response quality, identifying gaps, suggesting improvements.
+        \item Built the complete agent loop: initialized state, executed planning, invoked tools, reflected on results.
+        \item Tested end-to-end flow with sample inputs; fixed bugs and refined logic.
+        \item Implemented error handling: graceful degradation when tools fail, retry logic.
+    \end{itemize}
+
+    \item \textbf{Agent Evaluation}
+    \begin{itemize}
+        \item Tested reflection loop quality: how well the agent identifies and corrects its own mistakes.
+        \item Measured response latency and identify bottlenecks.
+        \item Evaluated response quality: accuracy, relevance, and completeness of agent outputs.
+    \end{itemize}
+
+    \item \textbf{Month 1 Review with Supervisor}
+    \begin{itemize}
+        \item Presented working basic agent with demo.
+        \item Discussed progress, challenges encountered, and lessons learned.
+        \item Reviewed feedback and adjusted scope for Month 2 if needed.
+        \item Confirmed readiness to proceed to sandbox integration phase.
+    \end{itemize}
+\end{itemize}
+
+\subsubsubsection*{Results / Knowledge Gained}
+
+\begin{itemize}
+    \item Successfully built a functioning agent with research and self-reflection capabilities.
+    \item Understood real-world considerations: error handling, performance, and robustness.
+    \item Learned how reflection loops work in practice: when they help and when they may not.
+    \item Received supervisor feedback and adjusted priorities for next phase.
+    \item Completed Month 1 with a solid foundation for sandbox integration.
+\end{itemize}
+
+\newpage
+
+\subsubsubsection{Week 5: Sandbox Concepts and Architecture}
+
+\subsubsubsection*{Strategic Context}
+
+Because all internal agents at GreenNode currently operate without virtual environments or sandboxing, they are vulnerable to code injection attacks, resource exhaustion, and unintended side effects. To safely deploy agents that execute code or interact with sensitive infrastructure, implementing a robust sandbox solution is critical. Week 5 establishes the foundation for this capability.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.4\linewidth]{Images/opensandbox_logo.png}
+\vspace{10pt}
+\caption{OpenSandbox Secure Execution Environment}
+\label{fig:opensandbox}
+\end{figure}
+
+\subsubsubsection*{Task Description}
+
+\begin{itemize}
+    \item \textbf{Sandbox Concepts and Security}
+    \begin{itemize}
+        \item Studied why sandboxes are critical for agent safety: isolating code execution, preventing unauthorized access.
+        \item Learned sandbox types: OS-level (containers), hypervisor-based (VMs), and application-level (WASM).
+        \item Reviewed OpenSandbox design: motivations, architecture, and threat model.
+    \end{itemize}
+
+    \item \textbf{Kubernetes-Based OpenSandbox Architecture}
+    \begin{itemize}
+        \item Studied Kubernetes fundamentals: pods, services, namespaces, RBAC, network policies.
+        \item Understood how OpenSandbox uses K8s:
+        \begin{itemize}
+            \item Spinning up isolated pods for each code execution request.
+            \item Managing resource limits (CPU, memory, disk).
+            \item Implementing network isolation and secret management.
+        \end{itemize}
+        \item Reviewed deployment patterns: single-cluster vs. multi-cluster setups.
+        \item Examined monitoring and logging in sandbox environments.
+    \end{itemize}
+
+    \item \textbf{Hands-on Sandbox Setup}
+    \begin{itemize}
+        \item Deployed a minimal OpenSandbox instance on local K8s cluster.
+        \item Tested pod creation, code execution, resource limits, and cleanup.
+        \item Verified isolation: attempted to access host resources from sandbox, confirmed isolation worked.
+    \end{itemize}
+\end{itemize}
+
+\subsubsubsection*{Results / Knowledge Gained}
+
+\begin{itemize}
+    \item Understood the importance of sandboxes for safe AI agent deployment.
+    \item Mastered Kubernetes fundamentals and how they apply to sandbox orchestration.
+    \item Gained hands-on experience deploying and testing sandbox environments.
+    \item Ready to integrate sandbox execution into the agent.
+\end{itemize}
+
+\subsubsubsection{Week 6: Container Runtime Benchmarking}
+
+\subsubsubsection*{Task Description}
+
+\begin{itemize}
+    \item \textbf{Container Runtime Comparison}
+    \begin{itemize}
+        \item Studied three container runtimes commonly used in sandboxes:
+        \begin{itemize}
+            \item \textbf{runsc (gVisor):} user-space kernel, strong isolation, higher overhead.
+            \item \textbf{kata-fc (Firecracker):} lightweight hypervisor, balance of isolation and performance.
+            \item \textbf{kata-qemu:} full QEMU hypervisor, maximum isolation, highest overhead.
         \end{itemize}
     \end{itemize}
 
-    \item \textbf{Organized an AI Seminar for the IT team}
+    \item \textbf{Benchmark Design and Execution}
     \begin{itemize}
-        \item \textbf{Objectives:}
+        \item Designed benchmark suite:
         \begin{itemize}
-            \item Introduce and consolidate foundational knowledge of Supervised Learning.
-
-            \item Help members understand popular algorithms, principles, and use cases.
-
-            \item Provide a foundation to apply Supervised Learning to real analysis/prediction projects.
+            \item Pod startup time.
+            \item Code execution latency (simple Python scripts, system calls).
+            \item Memory footprint per sandbox.
+            \item Network throughput (inter-pod communication).
         \end{itemize}
+        \item Implemented benchmarks using Python and Kubernetes.
+        \item Ran each runtime 10+ times to reduce noise; collected timing and resource data.
+        \item Analyzed overhead: CPU cycles, memory, and I/O costs compared to native execution.
+    \end{itemize}
 
-    \item \textbf{Seminar content preparation:}
-    \begin{enumerate}
-        \item \textbf{Recap – What is Supervised Learning?}
-        \begin{itemize}
-            \item Concept, workflow, and main components.
-
-            \item Distinguishing supervised vs. unsupervised learning.
-        \end{itemize}
-
-        \item \textbf{Linear \& Logistic Regression}
-        \begin{itemize}
-            \item Mathematical principles and usage.
-
-            \item Applications and pros/cons.
-        \end{itemize}
-
-        \item \textbf{Naive Bayes}
-        \begin{itemize}
-            \item Bayes–probability principle.
-
-            \item Uses in text classification, spam detection, sentiment analysis.
-        \end{itemize}
-
-        \item \textbf{K–Nearest Neighbors (KNN)}
-        \begin{itemize}
-            \item Nearest–neighbor search principle.
-
-            \item Effects of $K$ and distance metrics.
-
-            \item Applications and pros/cons.
-        \end{itemize}
-
-        \item \textbf{Decision Trees and Ensemble Learning}
-        \begin{itemize}
-            \item How decision trees split data.
-
-            \item Introduction to Bagging, Boosting, Stacking and their benefits.
-        \end{itemize}
-
-        \item \textbf{Demo}
-        \begin{itemize}
-            \item Train a supervised model on a sample dataset.
-
-            \item Make predictions and visualize results.
-        \end{itemize}
-
-        \item \textbf{Quiz \& Interactive Q\&A}
-        \begin{itemize}
-            \item Prepared a Quizziz set related to the seminar content.
-
-            \item Questions covered concepts, principles, practical uses, and demo analysis.
-        \end{itemize}
-    \end{enumerate}
-
-    \item \textbf{Seminar delivery:}
+    \item \textbf{Trade-off Analysis}
     \begin{itemize}
-        \item Presented slides with illustrative examples.
+        \item Created comparison tables and graphs (isolation strength vs. performance overhead).
+        \item Assessed which runtime is best for different use cases (e.g., low-latency agent tools vs. untrusted code).
+    \end{itemize}
+\end{itemize}
 
-        \item Performed a live demo.
+\subsubsubsection*{Results / Knowledge Gained}
 
-        \item Organized a Quizziz session:
+\begin{itemize}
+    \item Obtained quantitative benchmark data on container runtime performance.
+    \item Understood isolation vs. performance trade-offs in practical terms.
+    \item Developed data-driven insights for runtime selection.
+    \item Created benchmark methodology suitable for ongoing performance monitoring.
+\end{itemize}
+
+\subsubsubsection{Week 7–8: Sandbox Integration and Month 2 Review}
+
+\subsubsubsection*{Task Description}
+
+\begin{itemize}
+    \item \textbf{Wire Sandbox Execution into Agent}
+    \begin{itemize}
+        \item Integrated sandbox backend into the agent:
         \begin{itemize}
-            \item Participants answered via phone/laptop.
-
-            \item A real–time leaderboard created an engaging atmosphere.
-
+            \item Modified agent tools to accept code execution requests.
+            \item Implemented sandbox lifecycle management: pod creation, code injection, output capture, pod cleanup.
+            \item Added support for multiple languages (Python, Node.js, etc.) in sandbox execution.
         \end{itemize}
-        \item Q\&A, experience sharing.
+        \item Built safety layer: code validation, resource limits, timeout enforcement.
+        \item Implemented output streaming and error collection from sandboxed processes.
+    \end{itemize}
 
-        \item Shared materials, learning links, demo code, and quiz links.
+    \item \textbf{End-to-End Testing}
+    \begin{itemize}
+        \item Tested agent making tool calls that trigger sandbox execution.
+        \item Verified sandbox isolation: confirmed agent cannot access host secrets/data.
+        \item Tested error handling: timeouts, OOM, invalid code.
+        \item Validated latency: acceptable for real-time agent workflows.
+    \end{itemize}
+
+    \item \textbf{Month 2 Review with Supervisor}
+    \begin{itemize}
+        \item Demonstrated agent with integrated sandbox execution.
+        \item Presented benchmark results and runtime selection rationale.
+        \item Reviewed Month 2 progress and Month 3 focus (SRE Agent development).
+        \item Adjusted priorities based on supervisor feedback.
+    \end{itemize}
+\end{itemize}
+
+\subsubsubsection*{Results / Knowledge Gained}
+
+\begin{itemize}
+    \item Successfully integrated sandbox execution into agent pipeline.
+    \item Agent now capable of safely executing untrusted or dynamically generated code.
+    \item Complete Month 1-2 pipeline: LLM agent $\rightarrow$ tool planning $\rightarrow$ sandbox execution $\rightarrow$ reflection.
+    \item Transitioned focus to SRE Agent development for Month 3.
+\end{itemize}
+
+\newpage
+
+\subsubsubsection{Week 9: SRE Agent Onboarding}
+
+\subsubsubsection*{Task Description}
+
+\begin{itemize}
+    \item \textbf{SRE Agent Codebase Transfer and Review}
+    \begin{itemize}
+        \item Received SRE Agent codebase transfer from mentor: gained access to project source, documentation, and related resources.
+        \item Explored project structure: key modules, dependencies, and architecture organization.
+        \item Read architecture documentation and design docs provided by mentor.
+        \item Identified core components: state management, tool definitions, orchestration layer.
+        \item Conducted knowledge transfer session with mentor to understand design decisions and current challenges.
+    \end{itemize}
+
+    \item \textbf{Architectural Understanding}
+    \begin{itemize}
+        \item Mapped out how SRE Agent:
+        \begin{itemize}
+            \item Receives incident/operational requests.
+            \item Plans remediation steps (diagnostics, mitigation, resolution).
+            \item Invokes tools (log queries, API calls, configuration changes).
+            \item Monitors outcomes and adapts strategy.
+        \end{itemize}
+        \item Documented data flow diagrams and state transitions.
+        \item Identified integration points and extension opportunities.
+    \end{itemize}
+
+    \item \textbf{Local Setup and Initial Testing}
+    \begin{itemize}
+        \item Set up local development environment for SRE Agent.
+        \item Ran existing tests and verified baseline functionality.
+        \item Traced through a sample workflow to understand execution path.
+    \end{itemize}
+\end{itemize}
+
+\subsubsubsection*{Results / Knowledge Gained}
+
+\begin{itemize}
+    \item Comprehensive understanding of SRE Agent architecture and design.
+    \item Clear grasp of how requests flow through the system and interact with tools.
+    \item Identified specific areas for Month 3 improvements and feature development.
+\end{itemize}
+
+\subsubsubsection{Week 9–10: Core Agent Logic Implementation}
+
+\subsubsubsection*{Task Description}
+
+\begin{itemize}
+    \item \textbf{Source Code Analysis and Research}
+    \begin{itemize}
+        \item Conducted deep dive into SRE Agent codebase: traced execution paths, understood design patterns.
+        \item Read and analyzed core modules: decision logic, tool integration, state management.
+        \item Studied existing implementation: identified architectural patterns, design decisions, and dependencies.
+        \item Researched related systems: how agent components interact with infrastructure and data sources.
+    \end{itemize}
+
+    \item \textbf{Bug Identification and Diagnosis}
+    \begin{itemize}
+        \item Systematically tested agent workflows to identify failure modes and edge cases.
+        \item Traced issues in context management: memory leaks, state corruption, overflow scenarios.
+        \item Debugged Elasticsearch DB tool: query failures, timeout issues, data parsing errors.
+        \item Documented root causes and reproduction steps for each identified bug.
+        \item Prioritized bugs by severity and impact on production stability.
+    \end{itemize}
+\end{itemize}
+
+\subsubsubsection*{Results / Knowledge Gained}
+
+\begin{itemize}
+    \item Significantly improved SRE Agent core logic: cleaner code, better performance.
+    \item Delivered new features that enhance operational capabilities.
+    \item Established robust testing practices for ongoing development.
+\end{itemize}
+
+\subsubsubsection{Week 10–11: Harness Agent}
+
+\subsubsubsection*{Task Description}
+
+\begin{itemize}
+    \item \textbf{Agent Decision Loop}
+    \begin{itemize}
+        \item Studied the core decision loop: perception $\rightarrow$ planning $\rightarrow$ execution $\rightarrow$ reflection.
+        \item Implemented loop termination criteria: success conditions, max iterations, timeout.
+        \item Added loop instrumentation: logging each step for debugging and audit trails.
+    \end{itemize}
+
+    \begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Images/agent_harness_architecture.jpeg}
+    \caption{Agent Harness Architecture: Observation, Context, Model, Memory, and Actions Layers}
+    \label{fig:agent_harness}
+    \end{figure}
+
+    \item \textbf{Governance and Safety}
+    \begin{itemize}
+        \item Implemented approval mechanisms: human-in-the-loop for critical operations.
+        \item Added cost tracking: monitor resource usage (API calls, compute time).
+        \item Designed audit logging: comprehensive record of all agent decisions and tool invocations.
+        \item Reviewed governance policies: rate limits, resource caps, permission scopes.
+    \end{itemize}
+
+    \item \textbf{Multi-Agent Coordination}
+    \begin{itemize}
+        \item Studied swarm coordination patterns: how multiple agents communicate and collaborate.
+        \item Designed task delegation: how to split work among agents, aggregate results.
+        \item Implemented consensus mechanisms: how agents agree on solutions for complex problems.
+        \item Tested multi-agent scenarios: incident resolution requiring multiple specialized agents.
+    \end{itemize}
+\end{itemize}
+
+\subsubsubsection*{Results / Knowledge Gained}
+
+\begin{itemize}
+    \item Deep understanding of agent decision loops and how to instrument them.
+    \item Implemented governance framework suitable for production deployment.
+    \item Designed swarm coordination enabling multi-agent collaboration.
+    \item Ready for infrastructure integration and final R\&D presentation.
+\end{itemize}
+
+\subsubsubsection{Week 11–12: Low-Level Infrastructure Research and Integration}
+
+\subsubsubsection*{Task Description}
+
+\begin{itemize}
+    \item \textbf{Kubernetes Cluster Architecture}
+    \begin{itemize}
+        \item Studied GreenNode's K8s cluster setup: node configuration, networking, storage provisioning.
+        \item Understood how SRE Agent interacts with K8s:
+        \begin{itemize}
+            \item Monitoring pod health, resource utilization, and performance metrics.
+            \item Triggering automated scaling, redeployment, and recovery operations.
+            \item Querying cluster state: node status, workload distribution, resource contention.
+        \end{itemize}
+        \item Reviewed cluster policies: RBAC, network policies, resource quotas, and scheduling constraints.
+        \item Examined K8s integration points: API access, service discovery, secret management.
+    \end{itemize}
+
+    \item \textbf{Server Infrastructure}
+    \begin{itemize}
+        \item Studied physical and virtual server architecture:
+        \begin{itemize}
+            \item Server inventory management: hardware specs, capacity planning, lifecycle.
+            \item Monitoring and observability: CPU, memory, disk, network metrics.
+            \item Maintenance and patching strategies: scheduling, deployment procedures, rollback.
+        \end{itemize}
+        \item Understood how SRE Agent manages servers:
+        \begin{itemize}
+            \item Automated diagnostics: health checks, performance profiling, log analysis.
+            \item Remediation actions: service restarts, configuration updates, capacity adjustments.
+            \item Incident response: detecting anomalies, triggering alerts, executing recovery procedures.
+        \end{itemize}
+        \item Reviewed server access and security: authentication, authorization, audit logging.
+    \end{itemize}
+
+    \item \textbf{Data Source Research and Insight Deduction}
+    \begin{itemize}
+        \item \textbf{Elasticsearch Data Analysis:}
+        \begin{itemize}
+            \item Read and analyzed log patterns: incident frequency, error types, performance degradation signals.
+            \item Deduced insights: peak load patterns, common failure modes, anomaly signatures.
+            \item Identified correlation opportunities: linking logs across services for root cause analysis.
+        \end{itemize}
+
+        \item \textbf{MySQL Configuration and Metrics:}
+        \begin{itemize}
+            \item Read operational schema: configuration tables, metrics storage, performance data.
+            \item Analyzed query logs: slow queries, bottleneck queries, optimization opportunities.
+            \item Deduced insights: resource utilization patterns, capacity constraints, performance hotspots.
+        \end{itemize}
+
+        \item \textbf{MongoDB Telemetry and Records:}
+        \begin{itemize}
+            \item Read operational telemetry: system health metrics, service performance indicators.
+            \item Analyzed incident records: failure patterns, recovery times, root causes.
+            \item Deduced insights: recurring issues, time-based patterns, system stability trends.
+        \end{itemize}
+
+        \item \textbf{Multi-Source Data Correlation:}
+        \begin{itemize}
+            \item Traced end-to-end incident flows across Elasticsearch, MySQL, and MongoDB.
+            \item Deduced temporal relationships: event ordering, causality, dependency chains.
+            \item Identified data gaps and inconsistencies: where correlation fails and why.
+            \item Built understanding of system health: comprehensive incident context from multi-source views.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Infrastructure Observability}
+    \begin{itemize}
+        \item Studied monitoring stack: metrics collection, log aggregation, distributed tracing.
+        \item Reviewed alerting mechanisms: alert routing, escalation policies, on-call management.
+        \item Understood SRE Agent's role in observability: consuming alerts, analyzing metrics, driving automated responses.
+    \end{itemize}
+\end{itemize}
+
+\subsubsubsection*{Results / Knowledge Gained}
+
+\begin{itemize}
+    \item Comprehensive understanding of GreenNode's infrastructure: Kubernetes, servers, and data sources.
+    \item Mastered how SRE Agent integrates with each infrastructure component.
+    \item Understood multi-source data correlation for effective incident diagnosis.
+    \item Gained insights into operational constraints and best practices.
+    \item Prepared SRE Agent for production deployment with deep infrastructure awareness.
+\end{itemize}
+
+\subsubsubsection{Week 12: Deep Agent Seminar and Final Review}
+
+\subsubsubsection*{Task Description}
+
+\begin{itemize}
+    \item \textbf{Deep Agent Framework Deep Dive}
+    \begin{itemize}
+        \item Studied deepagents framework in detail: architecture patterns, orchestration model, and design philosophy.
+        \item Analyzed deepagents vs. LangGraph:
+        \begin{itemize}
+            \item Architecture differences: state management, execution model, extensibility.
+            \item Performance characteristics: latency, throughput, resource efficiency.
+            \item Scalability considerations: horizontal scaling, multi-agent coordination, distributed deployment.
+            \item Developer experience: API design, debugging, testing capabilities.
+        \end{itemize}
+        \item Created comprehensive comparison document with benchmarks and use-case recommendations.
+        \item Identified strengths and weaknesses of each approach for GreenNode's use cases.
+    \end{itemize}
+
+    \begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.35\linewidth]{Images/deepagent_logo.png}
+    \vspace{10pt}
+    \caption{Deep Agent Framework}
+    \label{fig:deepagent}
+    \end{figure}
+
+    \item \textbf{Internal Deep Agent Seminar}
+    \begin{itemize}
+        \item Prepared and delivered seminar to R\&D and engineering teams covering:
+        \begin{itemize}
+            \item \textbf{Internship Overview:} objectives, 3-month journey, key milestones.
+            \item \textbf{Agent Architecture Fundamentals:} LLM $\rightarrow$ tools $\rightarrow$ sandbox $\rightarrow$ reflection pipeline.
+            \item \textbf{Framework Comparison:} deepagents vs. LangGraph architectural differences.
+            \item \textbf{Infrastructure Integration:} how agents interact with K8s, servers, and data sources.
+            \item \textbf{Production Deployment:} governance, safety, monitoring, and scalability considerations.
+            \item \textbf{Recommendations:} which framework is best for different SRE Agent scenarios and future development.
+        \end{itemize}
+        \item Conducted interactive Q\&A session with R\&D team and engineering leadership.
+        \item Shared codebase insights, best practices, and lessons learned during the 3-month development.
     \end{itemize}
 
     \begin{figure}[!h]
     \centering
     \begin{minipage}[b]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Images/images-2.jpg}
-        % \caption{Image 1}
-        \label{fig:image1}
+        \includegraphics[width=\textwidth]{Images/page1.png}%
+        % \caption{Deep Agent Seminar Slide 1}%
+        \label{fig:deepagent_slide1}
     \end{minipage}
     \hfill
     \begin{minipage}[b]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Images/images-1.jpg}
-        % \caption{Image 2}
-        \label{fig:image2}
+        \includegraphics[width=\textwidth]{Images/page2.png}%
+        % \caption{Deep Agent Seminar Slide 2}%
+        \label{fig:deepagent_slide2}
     \end{minipage}
-    \caption{Seminar slides}
+    \vspace{10pt}
+    \caption{Deep Agent Seminar Slides}
     \end{figure}
-\end{itemize}
+
+    \item \textbf{Bug Fixes and Production Hardening}
+    \begin{itemize}
+        \item \textbf{Context Management:}
+        \begin{itemize}
+            \item Fixed memory context overflow issues in long-running agent workflows.
+            \item Improved context retrieval performance and accuracy.
+            \item Resolved context corruption issues during multi-agent coordination.
+            \item Implemented context pruning and lifecycle management.
+        \end{itemize}
+
+        \item \textbf{Elasticsearch DB Tool:}
+        \begin{itemize}
+            \item Fixed query timeout and connection pooling issues.
+            \item Improved error handling for failed index queries and malformed responses.
+            \item Optimized query performance for large datasets.
+            \item Resolved data type conversion and result parsing bugs.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Architectural Evolution Plan: LangGraph to Deep Agent Harness Migration}
+    \begin{itemize}
+        \item \textbf{Strategic Assessment:}
+        \begin{itemize}
+            \item Evaluated LangGraph as a low-level engine: good for prototyping, but lacks built-in harness features for production deployment.
+            \item Identified scalability and stability gaps: context management, governance enforcement, multi-agent coordination at scale.
+            \item Determined that transitioning to deep agent harness engine provides higher-level abstractions for enterprise use.
+        \end{itemize}
+
+        \item \textbf{Migration Strategy:}
+        \begin{itemize}
+            \item \textbf{Phase 1 - Foundation:} Replace LangGraph state management with harness-native context and observation layers.
+            \item \textbf{Phase 2 - Governance:} Migrate to harness governance model (approval mechanisms, cost tracking, audit logging).
+            \item \textbf{Phase 3 - Orchestration:} Adopt harness-native multi-agent coordination and swarm patterns.
+            \item \textbf{Phase 4 - Optimization:} Leverage harness-native memory, tool calling, and distributed tracing.
+        \end{itemize}
+
+        \item \textbf{Benefits of Harness Engine:}
+        \begin{itemize}
+            \item \textbf{Stability:} Enterprise-grade error handling, resilience patterns, and production safeguards.
+            \item \textbf{Scalability:} Native support for distributed deployment, horizontal scaling, and resource management.
+            \item \textbf{Observability:} Built-in instrumentation, monitoring, and governance audit trails.
+            \item \textbf{Developer Experience:} Higher-level abstractions reduce complexity, accelerate feature development, improve code maintainability.
+        \end{itemize}
+
+        \item \textbf{Implementation Roadmap:}
+        \begin{itemize}
+            \item Q4 2026: Complete Phase 1-2 migration (foundational harness integration).
+            \item Q1 2027: Complete Phase 3-4 (orchestration and optimization).
+            \item Q2 2027: Full production deployment of deep agent harness-based SRE Agent.
+            \item Parallel: Maintain LangGraph-based agents for backward compatibility during transition.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Final 3-Month Review and Handoff}
+    \begin{itemize}
+        \item Completed comprehensive summary of 3-month internship:
+        \begin{itemize}
+            \item Month 1: Built foundational research + reflection agent with LangGraph.
+            \item Month 2: Integrated sandbox execution, benchmarked container runtimes (runsc, kata-fc, kata-qemu).
+            \item Month 3: Developed SRE Agent with advanced governance, memory, multi-agent coordination, and production hardening through critical bug fixes.
+        \end{itemize}
+        \item Documented all deliverables: working code, architecture diagrams, design decisions, operational insights.
+        \item Transferred knowledge to supervisor and team members for ongoing development.
+        \item Discussed lessons learned, technical challenges overcome, and recommendations for future work.
+        \item Evaluated final results against internship KPIs; received supervisor and management feedback.
+    \end{itemize}
 \end{itemize}
 
 \subsubsubsection*{Results / Knowledge Gained}
+
 \begin{itemize}
-    \item Completed an internal web dashboard accessible via browser.
-
-    \item Data updates automatically from AI models and ElasticSearch.
-
-    \item Fully met operations and marketing needs: monitor churn, segment customers, and support retention decisions.
-
-    \item IT team understood the concepts, workflow, and common supervised algorithms.
-
-    \item Participants were assessed immediately via a quiz.
-
-    \item Increased interaction and retention through Q\&A and games.
-\end{itemize}
-
-\subsubsubsection{Week 8}
-\subsubsubsection*{Task Description}
-\begin{itemize}
-    \item \textbf{Writing the final project report}
-    \begin{itemize}
-        \item Introduced objectives, scope, and project phases.
-
-        \item Described data processing, model training, clustering, and dashboard development.
-
-        \item Presented results with illustrations, charts, and evaluation matrices.
-
-        \item Assessed model performance and accuracy in churn/segmentation prediction.
-    \end{itemize}
-
-    \item \textbf{Final presentation \& demo}
-    \begin{itemize}
-        \item Gave an overview of the project.
-
-        \item Live–demoed the dashboard and guided the operations team.
-
-        \item Answered questions and collected feedback.
-    \end{itemize}
-\end{itemize}
-
-% \begin{figure}[!h]
-%     \centering
-%     \includegraphics[width=0.5\linewidth]{Images/demo.jpg}
-%     \caption{Demo web dashboard.}
-%     % \label{fig:placeholder}
-% \end{figure}
-
-\subsubsubsection*{Results / Knowledge Gained}
-\begin{itemize}
-    \item Completed a comprehensive final report for internal archiving and sharing.
-
-    \item Delivered a fully functional, intuitive demo dashboard.
-
-    \item Received positive feedback and improvement suggestions from the team.
+    \item Delivered comprehensive internal seminar on Deep Agent frameworks and architecture.
+    \item Provided actionable recommendations for GreenNode's framework selection and deployment strategy.
+    \item Completed end-to-end development of agent systems: from LLM fundamentals to infrastructure integration.
+    \item Established strong foundation for GreenNode's AI innovation initiatives and agentic systems development.
+    \item Developed expertise in modern agent frameworks, sandbox security, and infrastructure orchestration.
+    \item Successfully transitioned knowledge and codebase to team for continued development and deployment.
 \end{itemize}

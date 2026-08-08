@@ -1,4 +1,4 @@
-name: Build thesis PDF
+name: Build Internship Report PDF
 
 on:
   push:

@@ -11,6 +11,10 @@ Updated the English internship report with additional container-runtime and hype
 - Explicit comparison of OS-level containers, gVisor, Firecracker, and QEMU-based hypervisor isolation.
 - Discussion of VM-level security boundaries, startup latency, and memory-overhead trade-offs.
 
+### Fixed
+
+- Updated the internship-program PDF inclusion to embed all pages with `pages=-` while preserving the requested scaling.
+
 ## [1.0.0] - 2026-08-09
 
 Initial release of the English internship report for the AI Applied Engineer internship at GreenNode.

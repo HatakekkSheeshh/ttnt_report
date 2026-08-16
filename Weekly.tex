@@ -37,9 +37,19 @@ Thanks to these core values, GreenNode's work environment is youthful, dynamic, 
 
 The internship topic is \emph{“AI Innovation for Internal Product Development.”} The goal is to build an AI-powered internal product that brings measurable value and drives adoption across the organization. This initiative aims to establish sustainable AI practices within the working environment and transform GreenNode into an AI-native organization, embedding intelligent automation and data-driven decision-making into core business processes and operational workflows.
 
-\subsubsection{Detailed Weekly Tasks}
+\subsubsection{Detailed Weekly Tasks and Project Roadmap}
+
+The three-month internship progressed from agent foundations and prototype development to SRE Agent implementation, supporting sandbox research, harness design, infrastructure analysis, and a Deep Agent migration proposal.
+
+\subsubsubsection*{Phase 1: Agent Foundations and Prototype Development}
+\phantomsection
+\addcontentsline{toc}{subsubsubsection}{Phase 1: Agent Foundations and Prototype Development}
+
+Month 1 established the foundations for building and evaluating the first agent prototype.
 
 \subsubsubsection{Week 1: Onboarding and LLM Fundamentals}
+
+During the first week, I joined the team, learned the development workflow, and prepared the local environment for the internship. I studied the role of large language models in agentic systems, focusing on prompting, context, reasoning, response generation, and interaction with external tools rather than low-level model architecture.
 
 \subsubsubsection*{Task Description}
 
@@ -52,12 +62,12 @@ The internship topic is \emph{“AI Innovation for Internal Product Development.
         \item Set up development environment: cloned repositories, configured local development stack.
     \end{itemize}
 
-    \item \textbf{Overview of Large Language Models}
+    \item \textbf{LLMs as Components of AI Agents}
     \begin{itemize}
-        \item Studied foundational LLM concepts: what are LLMs, their role in modern AI, and typical architectures.
-        \item Explored Transformer architecture: multi-head attention, positional encoding, and the encoder-decoder structure.
-        \item Understood how LLMs generate text: token prediction, sampling strategies, and inference mechanisms.
-        \item Reviewed practical LLM applications: chatbots, code generation, reasoning, and tool use.
+        \item Studied the role of LLMs as reasoning and decision-making components inside AI agents.
+        \item Focused on prompts, context, task instructions, structured outputs, and interaction with external tools.
+        \item Examined how an agent uses an LLM to interpret a request, plan actions, evaluate tool results, and produce a response.
+        \item Reviewed practical agent applications such as research assistance, code-related tasks, operational support, and self-reflection.
     \end{itemize}
 \end{itemize}
 
@@ -65,13 +75,15 @@ The internship topic is \emph{“AI Innovation for Internal Product Development.
 
 \begin{itemize}
     \item Gained clear understanding of team workflows, tools, and expectations.
-    \item Understood the foundation of LLM technology and how they work internally.
-    \item Grasped Transformer mechanics: attention mechanisms and how LLMs process and generate text.
-    \item Established the foundation for subsequent agent development tasks.
+    \item Understood how LLMs support agent reasoning, planning, tool use, and response generation.
+    \item Identified the importance of prompts, context, structured outputs, and clear tool interfaces in agent behavior.
+    \item Established the foundation for subsequent agent framework and workflow development.
     \item Set clear project goals and alignment with supervisor for the internship period.
 \end{itemize}
 
 \subsubsubsection{Week 2: Agent Frameworks Exploration}
+
+During the second week, I compared agent frameworks and studied the main patterns used to build agents. I focused on LangGraph, ReAct, reflection, self-critique, and tool use, then implemented small prototypes to observe state flow, callbacks, reflection behavior, and tool interaction before selecting a practical direction for the project.
 
 \subsubsubsection*{Task Description}
 
@@ -112,44 +124,67 @@ The internship topic is \emph{“AI Innovation for Internal Product Development.
 
 \subsubsubsection{Week 3: Agent Framework Deep Dive and Design}
 
+During the third week, I selected LangGraph because its modular graph structure provided control over agent execution and state management. I designed the basic agent architecture, defined its state and tool interfaces, and mapped the flow from planning to tool invocation, reflection, and response generation. 
+
 \subsubsubsection*{Task Description}
 
 \begin{itemize}
     \item \textbf{Framework Selection and Mastery}
     \begin{itemize}
-        \item Chose primary framework (e.g., LangGraph) based on project requirements and team preferences.
+        \item Chosed \textbf{LangGraph} framework based on project requirements and team preferences. Langgraph was selected for its flexibility, modularity, and support for complex agent workflows which we can intervent in the lower level execution and state management. 
         \item Studied advanced features: custom state types, multi-agent patterns, streaming, and error recovery.
         \item Read framework documentation and examined real-world example projects.
     \end{itemize}
 
-    \begin{figure}[!h]
+    \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\linewidth]{Images/langgraph_logo.png}
     \caption{LangGraph Agent Framework}
     \label{fig:langgraph}
     \end{figure}
 
-    \item \textbf{Observability and Monitoring}
-    \begin{itemize}
-        \item \textbf{Jaeger Distributed Tracing for Agent Behavior:}
-        \begin{itemize}
-            \item Studied Jaeger for distributed tracing of agent execution and decision flow.
-            \item Understood how to instrument agent code: trace LLM calls, tool invocations, and decision loops.
-            \item Set up Jaeger to observe agent behavior: decision latency, reasoning steps, reflection cycles.
-            \item Integrated LLM call tracing: input tokens, output tokens, model latency, prompt engineering impact.
-            \item Tracked tool execution: invocation order, results, error handling, performance metrics.
-        \end{itemize}
-        \item Benefits: real-time visibility into agent behavior, reasoning transparency, and LLM interaction efficiency.
-    \end{itemize}
-
-    \begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.35\linewidth]{Images/Jaeger_logo.png}
-    \caption{Jaeger Distributed Tracing Platform}
-    \label{fig:jaeger}
-    \end{figure}
-
     \item \textbf{Agent Architecture Design}
+    \begin{figure}[H]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[
+    node distance=7mm and 9mm,
+    box/.style={draw, rounded corners, align=center, minimum height=9mm,
+                text width=28mm, fill=blue!8},
+    decision/.style={diamond, draw, align=center, aspect=2.1,
+                     inner sep=1pt, text width=22mm, fill=orange!15},
+    line/.style={->, >=stealth, thick},
+    loop/.style={->, >=stealth, thick, dashed}
+]
+    \node[box] (input) {User Input};
+    \node[box, right=of input] (state) {Initialize\\Agent State};
+    \node[box, right=of state] (observe) {Observe\\Context};
+    \node[box, right=of observe] (plan) {Plan and\\Reason with LLM};
+    \node[decision, right=of plan] (decide) {Next action?};
+    \node[box, below=of decide] (tool) {Invoke Tool};
+    \node[box, left=of tool] (result) {Receive Tool\\Result};
+    \node[box, left=of result] (reflect) {Evaluate and\\Reflect};
+    \node[box, above=of decide] (final) {Generate\\Final Response};
+
+    \draw[line] (input) -- (state);
+    \draw[line] (state) -- (observe);
+    \draw[line] (observe) -- (plan);
+    \draw[line] (plan) -- (decide);
+    \draw[line] (decide) -- node[right, font=\scriptsize] {complete} (final);
+    \draw[line] (decide) -- node[right, font=\scriptsize] {tool required} (tool);
+    \draw[line] (tool) -- (result);
+    \draw[line] (result) -- (reflect);
+    \draw[loop]
+        (reflect.north)
+        -- node[right, fill=white, inner sep=1pt, font=\scriptsize]
+        {continue}
+        (observe.south);
+\end{tikzpicture}%
+}
+\vspace{1pt}
+\caption{Basic Agent Logic: State Initialization, Reasoning, Tool Use, and Reflection}
+\label{fig:agent_logic}
+\end{figure}
     \begin{itemize}
         \item Designed a basic two-capability agent:
         \begin{itemize}
@@ -160,14 +195,9 @@ The internship topic is \emph{“AI Innovation for Internal Product Development.
         \item Mapped out the execution flow: planning $\rightarrow$ tool invocation $\rightarrow$ reflection $\rightarrow$ output.
         \item Designed tool interfaces: research (query), knowledge store (retrieve), and reflection (evaluate).
     \end{itemize}
-
-    \item \textbf{Implementation Planning}
-    \begin{itemize}
-        \item Created a detailed technical spec for the basic agent.
-        \item Identified required dependencies, APIs, and external services.
-        \item Planned testing and validation strategy.
-    \end{itemize}
 \end{itemize}
+
+
 
 \subsubsubsection*{Results / Knowledge Gained}
 
@@ -179,6 +209,8 @@ The internship topic is \emph{“AI Innovation for Internal Product Development.
 \end{itemize}
 
 \subsubsubsection{Week 4: Basic Agent Implementation and Month 1 Review}
+
+During the fourth week, I implemented the basic research and self-reflection agent from the design prepared in Week 3. I connected the agent loop, tested representative inputs, handled tool failures, evaluated response quality and latency, and presented the working prototype during the Month 1 review.
 
 \subsubsubsection*{Task Description}
 
@@ -220,382 +252,325 @@ The internship topic is \emph{“AI Innovation for Internal Product Development.
 
 \newpage
 
-\subsubsubsection{Week 5: Sandbox Concepts and Architecture}
+\subsubsubsection*{Phase 2: SRE Agent Development and Sandbox Support}
+\phantomsection
+\addcontentsline{toc}{subsubsubsection}{Phase 2: SRE Agent Development and Sandbox Support}
 
-\subsubsubsection*{Strategic Context}
+Month 2 focused on building the SRE Agent and investigating sandboxing as a supporting execution capability.
 
-Because all internal agents at GreenNode currently operate without virtual environments or sandboxing, they are vulnerable to code injection attacks, resource exhaustion, and unintended side effects. To safely deploy agents that execute code or interact with sensitive infrastructure, implementing a robust sandbox solution is critical. Week 5 establishes the foundation for this capability.
+\subsubsubsection{Week 5: SRE Agent Foundations and Operational Motivation}
 
-\begin{figure}[!h]
-\centering
-\includegraphics[width=0.4\linewidth]{Images/opensandbox_logo.png}
-\vspace{10pt}
-\caption{OpenSandbox Secure Execution Environment}
-\label{fig:opensandbox}
-\end{figure}
+During Week 5, I started building the SRE Agent from the agent foundations completed in Month 1. The agent was needed to support GreenNode's internal operations by turning operational requests into structured diagnostic workflows. Instead of relying on manual investigation across infrastructure components, the SRE Agent could interpret an incident request, plan diagnostic steps, invoke the appropriate tools, and evaluate the collected results in a consistent process.
 
 \subsubsubsection*{Task Description}
 
 \begin{itemize}
-    \item \textbf{Sandbox Concepts and Security}
+    \item \textbf{Motivation for Building the SRE Agent}
     \begin{itemize}
-        \item Studied why sandboxes are critical for agent safety: isolating code execution, preventing unauthorized access.
-        \item Learned sandbox types: OS-level (containers), hypervisor-based (VMs), and application-level (WASM).
-        \item Reviewed OpenSandbox design: motivations, architecture, and threat model.
+        \item Analyzed the need for an agent specialized in supporting internal Site Reliability Engineering tasks.
+        \item Identified that operational troubleshooting requires coordinated reasoning across incident requests, diagnostic procedures, tools, and technical results.
+        \item Defined the SRE Agent as a way to make these workflows more systematic, repeatable, and easier to extend.
     \end{itemize}
 
-    \item \textbf{Kubernetes-Based OpenSandbox Architecture}
+    \item \textbf{SRE Agent Initial Development}
     \begin{itemize}
-        \item Studied Kubernetes fundamentals: pods, services, namespaces, RBAC, network policies.
-        \item Understood how OpenSandbox uses K8s:
-        \begin{itemize}
-            \item Spinning up isolated pods for each code execution request.
-            \item Managing resource limits (CPU, memory, disk).
-            \item Implementing network isolation and secret management.
-        \end{itemize}
-        \item Reviewed deployment patterns: single-cluster vs. multi-cluster setups.
-        \item Examined monitoring and logging in sandbox environments.
-    \end{itemize}
-
-    \item \textbf{Hands-on Sandbox Setup}
-    \begin{itemize}
-        \item Deployed a minimal OpenSandbox instance on local K8s cluster.
-        \item Tested pod creation, code execution, resource limits, and cleanup.
-        \item Verified isolation: attempted to access host resources from sandbox, confirmed isolation worked.
+        \item Built the initial SRE Agent from the agent foundations developed during Month 1.
+        \item Defined the initial operational workflow: receiving an incident request, planning diagnostic steps, invoking tools, and reviewing results.
+        \item Studied the required state, tool interfaces, and execution flow for an SRE-oriented agent.
+        \item Set up the local development environment and established a baseline for later harness and infrastructure work.
     \end{itemize}
 \end{itemize}
 
 \subsubsubsection*{Results / Knowledge Gained}
 
 \begin{itemize}
-    \item Understood the importance of sandboxes for safe AI agent deployment.
-    \item Mastered Kubernetes fundamentals and how they apply to sandbox orchestration.
-    \item Gained hands-on experience deploying and testing sandbox environments.
-    \item Ready to integrate sandbox execution into the agent.
+    \item Established the motivation, initial architecture, and execution flow of the SRE Agent.
+    \item Connected agent reasoning and tool orchestration to concrete internal SRE troubleshooting needs.
+    \item Prepared a clear baseline for continuing backend logic development in the following weeks.
 \end{itemize}
 
-\subsubsubsection{Week 6: Container Runtime Benchmarking}
+\subsubsubsection{Week 6: SRE Agent Core Logic and Runtime Research}
+
+During Week 6, I implemented and refined the SRE Agent backend logic. I worked on request interpretation, planning, state transitions, tool invocation, result evaluation, and error handling. After the core flow was established, I added Jaeger-based observability to trace LLM calls, tool invocations, decision loops, and execution latency. I also documented the execution requirements that would later guide the sandbox research and staging integration in Weeks 7--8.
 
 \subsubsubsection*{Task Description}
 
 \begin{itemize}
-    \item \textbf{Container Runtime Comparison}
+    \item \textbf{SRE Agent Core Logic}
     \begin{itemize}
-        \item Studied three container runtimes commonly used in sandboxes:
-        \begin{itemize}
-            \item \textbf{runsc (gVisor):} user-space kernel, strong isolation, higher overhead.
-            \item \textbf{kata-fc (Firecracker):} lightweight hypervisor, balance of isolation and performance.
-            \item \textbf{kata-qemu:} full QEMU hypervisor, maximum isolation, highest overhead.
-        \end{itemize}
+        \item Implemented and refined the initial agent loop: request interpretation, planning, tool invocation, and result evaluation.
+        \item Studied state management and error-handling requirements for operational workflows.
+        \item Tested representative diagnostic flows and documented execution behavior.
     \end{itemize}
 
-    \item \textbf{Hypervisor-Based Isolation}
+    \item \textbf{SRE Agent Observability and Monitoring}
     \begin{itemize}
-        \item Studied hypervisor-based runtimes, where each sandbox runs inside a lightweight virtual machine instead of sharing the host kernel directly.
-        \item Compared Firecracker-based \texttt{kata-fc} and QEMU-based \texttt{kata-qemu} with OS-level containers and gVisor.
-        \item Evaluated the stronger VM-level security boundary for untrusted agent code, together with the additional virtualization overhead.
-        \item Analyzed the trade-off: hypervisor runtimes generally provide stronger isolation but require more memory and have higher startup latency than ordinary containers.
-    \end{itemize}
-
-    \item \textbf{Benchmark Design and Execution}
-    \begin{itemize}
-        \item Designed benchmark suite:
-        \begin{itemize}
-            \item Pod startup time.
-            \item Code execution latency (simple Python scripts, system calls).
-            \item Memory footprint per sandbox.
-            \item Network throughput (inter-pod communication).
-        \end{itemize}
-        \item Implemented benchmarks using Python and Kubernetes.
-        \item Ran each runtime 10+ times to reduce noise; collected timing and resource data.
-        \item Analyzed overhead: CPU cycles, memory, and I/O costs compared to native execution.
-    \end{itemize}
-
-    \item \textbf{Trade-off Analysis}
-    \begin{itemize}
-        \item Created comparison tables and graphs (isolation strength vs. performance overhead).
-        \item Assessed which runtime is best for different use cases (e.g., low-latency agent tools vs. untrusted code).
-    \end{itemize}
-\end{itemize}
-
-\subsubsubsection*{Results / Knowledge Gained}
-
-\begin{itemize}
-    \item Obtained quantitative benchmark data on container runtime performance.
-    \item Understood isolation vs. performance trade-offs in practical terms.
-    \item Developed data-driven insights for runtime selection.
-    \item Created benchmark methodology suitable for ongoing performance monitoring.
-\end{itemize}
-
-\subsubsubsection{Week 7–8: Sandbox Integration and Month 2 Review}
-
-\subsubsubsection*{Task Description}
-
-\begin{itemize}
-    \item \textbf{Wire Sandbox Execution into Agent}
-    \begin{itemize}
-        \item Integrated sandbox backend into the agent:
-        \begin{itemize}
-            \item Modified agent tools to accept code execution requests.
-            \item Implemented sandbox lifecycle management: pod creation, code injection, output capture, pod cleanup.
-            \item Added support for multiple languages (Python, Node.js, etc.) in sandbox execution.
-        \end{itemize}
-        \item Built safety layer: code validation, resource limits, timeout enforcement.
-        \item Implemented output streaming and error collection from sandboxed processes.
-    \end{itemize}
-
-    \item \textbf{End-to-End Testing}
-    \begin{itemize}
-        \item Tested agent making tool calls that trigger sandbox execution.
-        \item Verified sandbox isolation: confirmed agent cannot access host secrets/data.
-        \item Tested error handling: timeouts, OOM, invalid code.
-        \item Validated latency: acceptable for real-time agent workflows.
-    \end{itemize}
-
-    \item \textbf{Month 2 Review with Supervisor}
-    \begin{itemize}
-        \item Demonstrated agent with integrated sandbox execution.
-        \item Presented benchmark results and runtime selection rationale.
-        \item Reviewed Month 2 progress and Month 3 focus (SRE Agent development).
-        \item Adjusted priorities based on supervisor feedback.
-    \end{itemize}
-\end{itemize}
-
-\subsubsubsection*{Results / Knowledge Gained}
-
-\begin{itemize}
-    \item Successfully integrated sandbox execution into agent pipeline.
-    \item Agent now capable of safely executing untrusted or dynamically generated code.
-    \item Complete Month 1-2 pipeline: LLM agent $\rightarrow$ tool planning $\rightarrow$ sandbox execution $\rightarrow$ reflection.
-    \item Transitioned focus to SRE Agent development for Month 3.
-\end{itemize}
-
-\newpage
-
-\subsubsubsection{Week 9: SRE Agent Onboarding}
-
-\subsubsubsection*{Task Description}
-
-\begin{itemize}
-    \item \textbf{SRE Agent Codebase Transfer and Review}
-    \begin{itemize}
-        \item Received SRE Agent codebase transfer from mentor: gained access to project source, documentation, and related resources.
-        \item Explored project structure: key modules, dependencies, and architecture organization.
-        \item Read architecture documentation and design docs provided by mentor.
-        \item Identified core components: state management, tool definitions, orchestration layer.
-        \item Conducted knowledge transfer session with mentor to understand design decisions and current challenges.
-    \end{itemize}
-
-    \item \textbf{Architectural Understanding}
-    \begin{itemize}
-        \item Mapped out how SRE Agent:
-        \begin{itemize}
-            \item Receives incident/operational requests.
-            \item Plans remediation steps (diagnostics, mitigation, resolution).
-            \item Invokes tools (log queries, API calls, configuration changes).
-            \item Monitors outcomes and adapts strategy.
-        \end{itemize}
-        \item Documented data flow diagrams and state transitions.
-        \item Identified integration points and extension opportunities.
-    \end{itemize}
-
-    \item \textbf{Local Setup and Initial Testing}
-    \begin{itemize}
-        \item Set up local development environment for SRE Agent.
-        \item Ran existing tests and verified baseline functionality.
-        \item Traced through a sample workflow to understand execution path.
-    \end{itemize}
-\end{itemize}
-
-\subsubsubsection*{Results / Knowledge Gained}
-
-\begin{itemize}
-    \item Comprehensive understanding of SRE Agent architecture and design.
-    \item Clear grasp of how requests flow through the system and interact with tools.
-    \item Identified specific areas for Month 3 improvements and feature development.
-\end{itemize}
-
-\subsubsubsection{Week 9–10: Core Agent Logic Implementation}
-
-\subsubsubsection*{Task Description}
-
-\begin{itemize}
-    \item \textbf{Source Code Analysis and Research}
-    \begin{itemize}
-        \item Conducted deep dive into SRE Agent codebase: traced execution paths, understood design patterns.
-        \item Read and analyzed core modules: decision logic, tool integration, state management.
-        \item Studied existing implementation: identified architectural patterns, design decisions, and dependencies.
-        \item Researched related systems: how agent components interact with infrastructure and data sources.
-    \end{itemize}
-
-    \item \textbf{Bug Identification and Diagnosis}
-    \begin{itemize}
-        \item Systematically tested agent workflows to identify failure modes and edge cases.
-        \item Traced issues in context management: memory leaks, state corruption, overflow scenarios.
-        \item Debugged Elasticsearch DB tool: query failures, timeout issues, data parsing errors.
-        \item Documented root causes and reproduction steps for each identified bug.
-        \item Prioritized bugs by severity and impact on production stability.
-    \end{itemize}
-\end{itemize}
-
-\subsubsubsection*{Results / Knowledge Gained}
-
-\begin{itemize}
-    \item Significantly improved SRE Agent core logic: cleaner code, better performance.
-    \item Delivered new features that enhance operational capabilities.
-    \item Established robust testing practices for ongoing development.
-\end{itemize}
-
-\subsubsubsection{Week 10–11: Harness Agent}
-
-\subsubsubsection*{Task Description}
-
-\begin{itemize}
-    \item \textbf{Agent Decision Loop}
-    \begin{itemize}
-        \item Studied the core decision loop: perception $\rightarrow$ planning $\rightarrow$ execution $\rightarrow$ reflection.
-        \item Implemented loop termination criteria: success conditions, max iterations, timeout.
-        \item Added loop instrumentation: logging each step for debugging and audit trails.
+        \item Studied Jaeger for tracing the SRE Agent's execution and decision flow after the core backend logic was established.
+        \item Instrumented LLM calls, tool invocations, state transitions, and decision loops to analyze agent behavior.
+        \item Observed decision latency, reasoning steps, reflection cycles, token usage, model latency, and tool performance.
+        \item Used traces to identify execution bottlenecks, verify error handling, and improve the SRE Agent's operational workflow.
+        \item Improved visibility into agent behavior and supported more transparent debugging of the backend logic.
     \end{itemize}
 
     \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.9\linewidth]{Images/agent_harness_architecture.jpeg}
-    \caption{Agent Harness Architecture: Observation, Context, Model, Memory, and Actions Layers}
-    \label{fig:agent_harness}
+    \includegraphics[width=0.35\linewidth]{Images/Jaeger_logo.png}
+    \caption{Jaeger Distributed Tracing for SRE Agent Behavior}
+    \label{fig:jaeger}
     \end{figure}
 
-    \item \textbf{Governance and Safety}
+    \item \textbf{Execution Requirements for the Next Phase}
     \begin{itemize}
-        \item Implemented approval mechanisms: human-in-the-loop for critical operations.
-        \item Added cost tracking: monitor resource usage (API calls, compute time).
-        \item Designed audit logging: comprehensive record of all agent decisions and tool invocations.
-        \item Reviewed governance policies: rate limits, resource caps, permission scopes.
+        \item Documented the execution, error-handling, and observability requirements for running agent tools safely.
+        \item Prepared criteria for evaluating sandbox runtimes during the staging-environment integration in Weeks 7--8.
     \end{itemize}
 
-    \item \textbf{Multi-Agent Coordination}
+    \begin{figure}[H]
+        \centering
+
+        \resizebox{0.9\linewidth}{!}{%
+        \begin{tikzpicture}[
+            node distance=12mm and 16mm,
+            arch/.style={
+                draw,
+                rounded corners,
+                align=center,
+                minimum height=11mm,
+                text width=38mm,
+                fill=blue!8
+            },
+            graph/.style={
+                draw,
+                rounded corners,
+                align=center,
+                minimum height=17mm,
+                text width=48mm,
+                fill=blue!18,
+                very thick
+            },
+            flow/.style={->, >=stealth, thick},
+            trace/.style={->, >=stealth, thick, dashed}
+        ]
+
+            \node[arch] (request) {Operational\\Request};
+
+            \node[graph, right=of request] (runtime) {
+                Graph Runtime\\
+                SRE Agent Logic\\
+                \scriptsize
+                interpret $\rightarrow$ plan $\rightarrow$
+                invoke $\rightarrow$ evaluate
+            };
+
+            \node[arch, right=22mm of runtime, yshift=14mm]
+                (observability) {Observability\\Jaeger Tracing};
+
+            \node[arch, right=22mm of runtime, yshift=-14mm]
+                (execution) {Sandbox};
+
+            \draw[flow]
+                (request.east) -- (runtime.west);
+
+            \draw[trace]
+                (runtime.north east)
+                -- node[above, sloped, font=\scriptsize] {agent traces}
+                (observability.west);
+
+            \draw[flow]
+                (runtime.south east)
+                -- node[below, sloped, font=\scriptsize] {tool execution}
+                (execution.west);
+
+            \draw[flow, rounded corners]
+                (execution.south)
+                -- ++(0,-6mm)
+                -| node[below, font=\scriptsize, pos=0.25] {results}
+                (runtime.south);
+
+        \end{tikzpicture}%
+        }
+
+        \vspace{4mm}
+
+        \caption{SRE Agent Architecture}
+        \label{fig:sre_architecture}
+    \end{figure}
+\end{itemize}
+
+\subsubsubsection*{Results / Knowledge Gained}
+
+\begin{itemize}
+    \item Strengthened the SRE Agent's initial execution and tool-invocation logic.
+    \item Produced runtime-selection criteria for the agent's future sandbox capability.
+    \item Linked runtime research to concrete SRE Agent execution requirements.
+\end{itemize}
+
+\subsubsubsection{Week 7--8: Sandbox Research and SRE Agent Staging Integration}
+
+During Weeks 7--8, I began researching sandboxing as a supporting execution environment for the SRE Agent and integrated it in the staging environment. The goal was to allow code-related or diagnostic actions to run with controlled isolation while keeping the SRE Agent's operational workflow unchanged. I continued refining the agent's diagnostic flow, tested staging execution paths and failure cases, and evaluated the runtime behavior of sandboxed actions.
+
+\subsubsubsection*{Task Description}
+
+\begin{itemize}
+    \item \textbf{SRE Agent Development}
     \begin{itemize}
-        \item Studied swarm coordination patterns: how multiple agents communicate and collaborate.
-        \item Designed task delegation: how to split work among agents, aggregate results.
-        \item Implemented consensus mechanisms: how agents agree on solutions for complex problems.
-        \item Tested multi-agent scenarios: incident resolution requiring multiple specialized agents.
+        \item Continued developing the SRE Agent's diagnostic workflow and tool integration.
+        \item Traced execution paths, tested failure cases, and refined state transitions.
+        \item Prepared the agent structure for controlled execution and later infrastructure-aware operations.
+    \end{itemize}
+
+    \item \textbf{Sandbox Research}
+    \begin{itemize}
+        \item Studied OpenSandbox and the security requirements for executing agent-generated or untrusted code.
+        \item Compared runsc (gVisor), kata-fc (Firecracker), and kata-qemu (QEMU) according to isolation, startup latency, execution latency, memory footprint, and network throughput.
+        \item Analyzed Kubernetes orchestration, resource limits, timeout handling, output capture, and cleanup requirements.
+    \end{itemize}
+
+    \item \textbf{Staging-Environment Integration}
+    \begin{itemize}
+        \item Integrated sandbox execution with the SRE Agent's tool-invocation path in the staging environment.
+        \item Tested pod creation, code execution, output collection, cleanup, resource limits, and timeout handling.
+        \item Verified the interaction between the SRE Agent backend logic and the sandbox without treating sandboxing as a separate project.
+    \end{itemize}
+
+    \item \textbf{Month 2 Review with Supervisor}
+    \begin{itemize}
+        \item Demonstrated the SRE Agent workflow and its supporting sandbox integration in staging.
+        \item Presented the runtime research and explained how sandboxing supports safer agent operations.
+        \item Reviewed the next phase: harness development, infrastructure research, and production-oriented design.
     \end{itemize}
 \end{itemize}
 
 \subsubsubsection*{Results / Knowledge Gained}
 
 \begin{itemize}
-    \item Deep understanding of agent decision loops and how to instrument them.
-    \item Implemented governance framework suitable for production deployment.
-    \item Designed swarm coordination enabling multi-agent collaboration.
-    \item Ready for infrastructure integration and final R\&D presentation.
+    \item Advanced the SRE Agent from an initial workflow toward an infrastructure-aware operational agent.
+    \item Gained practical knowledge of sandbox runtimes and integrated controlled execution into the SRE Agent staging environment.
+    \item Established the foundation for Month 3 harness, governance, and infrastructure work.
 \end{itemize}
 
-\subsubsubsection{Week 11–12: Low-Level Infrastructure Research and Integration}
+\subsubsubsection{Week 9: SRE Agent Development and Architecture Review}
+
+During Week 9, I continued developing the SRE Agent and reviewed its architecture as the project moved toward harness-oriented design. I traced how operational requests moved through state management, planning, tool integration, orchestration, and result evaluation. I also read the current source code and design documents to identify integration points and unresolved issues for the next phase.
 
 \subsubsubsection*{Task Description}
 
 \begin{itemize}
-    \item \textbf{Kubernetes Cluster Architecture}
+    \item \textbf{SRE Agent Architecture Development}
     \begin{itemize}
-        \item Studied GreenNode's K8s cluster setup: node configuration, networking, storage provisioning.
-        \item Understood how SRE Agent interacts with K8s:
-        \begin{itemize}
-            \item Monitoring pod health, resource utilization, and performance metrics.
-            \item Triggering automated scaling, redeployment, and recovery operations.
-            \item Querying cluster state: node status, workload distribution, resource contention.
-        \end{itemize}
-        \item Reviewed cluster policies: RBAC, network policies, resource quotas, and scheduling constraints.
-        \item Examined K8s integration points: API access, service discovery, secret management.
+        \item Continued developing the SRE Agent architecture from the foundations established in Month 2.
+        \item Integrated internal databases into the SRE Agent as tools for checking operational logs and diagnosing resource-related issues.
+        \item Defined the main state-management, tool-integration, and orchestration responsibilities.
     \end{itemize}
 
-    \item \textbf{Server Infrastructure}
+    \item \textbf{Codebase and Design Review}
     \begin{itemize}
-        \item Studied physical and virtual server architecture:
-        \begin{itemize}
-            \item Server inventory management: hardware specs, capacity planning, lifecycle.
-            \item Monitoring and observability: CPU, memory, disk, network metrics.
-            \item Maintenance and patching strategies: scheduling, deployment procedures, rollback.
-        \end{itemize}
-        \item Understood how SRE Agent manages servers:
-        \begin{itemize}
-            \item Automated diagnostics: health checks, performance profiling, log analysis.
-            \item Remediation actions: service restarts, configuration updates, capacity adjustments.
-            \item Incident response: detecting anomalies, triggering alerts, executing recovery procedures.
-        \end{itemize}
-        \item Reviewed server access and security: authentication, authorization, audit logging.
-    \end{itemize}
-
-    \item \textbf{Data Source Research and Insight Deduction}
-    \begin{itemize}
-        \item \textbf{Elasticsearch Data Analysis:}
-        \begin{itemize}
-            \item Read and analyzed log patterns: incident frequency, error types, performance degradation signals.
-            \item Deduced insights: peak load patterns, common failure modes, anomaly signatures.
-            \item Identified correlation opportunities: linking logs across services for root cause analysis.
-        \end{itemize}
-
-        \item \textbf{MySQL Configuration and Metrics:}
-        \begin{itemize}
-            \item Read operational schema: configuration tables, metrics storage, performance data.
-            \item Analyzed query logs: slow queries, bottleneck queries, optimization opportunities.
-            \item Deduced insights: resource utilization patterns, capacity constraints, performance hotspots.
-        \end{itemize}
-
-        \item \textbf{MongoDB Telemetry and Records:}
-        \begin{itemize}
-            \item Read operational telemetry: system health metrics, service performance indicators.
-            \item Analyzed incident records: failure patterns, recovery times, root causes.
-            \item Deduced insights: recurring issues, time-based patterns, system stability trends.
-        \end{itemize}
-
-        \item \textbf{Multi-Source Data Correlation:}
-        \begin{itemize}
-            \item Traced end-to-end incident flows across Elasticsearch, MySQL, and MongoDB.
-            \item Deduced temporal relationships: event ordering, causality, dependency chains.
-            \item Identified data gaps and inconsistencies: where correlation fails and why.
-            \item Built understanding of system health: comprehensive incident context from multi-source views.
-        \end{itemize}
-    \end{itemize}
-
-    \item \textbf{Infrastructure Observability}
-    \begin{itemize}
-        \item Studied monitoring stack: metrics collection, log aggregation, distributed tracing.
-        \item Reviewed alerting mechanisms: alert routing, escalation policies, on-call management.
-        \item Understood SRE Agent's role in observability: consuming alerts, analyzing metrics, driving automated responses.
+        \item Reviewed the current source code, architecture documents, and design decisions.
+        \item Traced representative execution paths and identified integration points for the harness mechanism.
+        \item Discussed design choices and current challenges with the mentor and team.
     \end{itemize}
 \end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/demo_1.png}%
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/demo_2.png}%
+    \end{minipage}
+    \vspace{10pt}
+    \caption{Demo of SRE-Agent}
+    \label{fig:sre_agent_demo}
+\end{figure}
 
 \subsubsubsection*{Results / Knowledge Gained}
 
 \begin{itemize}
-    \item Comprehensive understanding of GreenNode's infrastructure: Kubernetes, servers, and data sources.
-    \item Mastered how SRE Agent integrates with each infrastructure component.
-    \item Understood multi-source data correlation for effective incident diagnosis.
-    \item Gained insights into operational constraints and best practices.
-    \item Prepared SRE Agent for production deployment with deep infrastructure awareness.
+    \item Built a clear understanding of the SRE Agent architecture and its development direction.
+    \item Connected the Month 2 agent workflow with the Month 3 harness and infrastructure tasks.
+    \item Identified areas requiring deeper analysis and refinement.
 \end{itemize}
 
-\subsubsubsection{Week 12: Deep Agent Seminar and Final Review}
+\newpage
+
+\subsubsubsection*{Phase 3: Harness Research, Deep Agent Seminar, and Migration Review}
+\phantomsection
+\addcontentsline{toc}{subsubsubsection}{Phase 3: Harness Research, Deep Agent Seminar, and Migration Review}
+
+Month 3 focused on the scalability limitations of the LangGraph-based SRE Agent, research into the LangChain Deep Agent harness, knowledge sharing with the team, and preparation of a migration plan for review with the line manager.
+
+\subsubsubsection{Week 10: LangGraph Scalability Review and Deep Agent Harness Research}
+
+During Week 10, I investigated why the SRE Agent became difficult to scale as its LangGraph workflow grew. The increasing number of state transitions, tool integrations, execution controls, and operational requirements made the low-level graph implementation harder to extend and maintain. After surveying alternative approaches, I focused on the LangChain Deep Agent suite as a higher-level harness for improving the SRE Agent's stability, scalability, and developer experience.
 
 \subsubsubsection*{Task Description}
 
 \begin{itemize}
-    \item \textbf{Deep Agent Framework Deep Dive}
+    \item \textbf{Analysis of the Existing LangGraph SRE Agent}
     \begin{itemize}
-        \item Studied deepagents framework in detail: architecture patterns, orchestration model, and design philosophy.
-        \item Analyzed deepagents vs. LangGraph:
-        \begin{itemize}
-            \item Architecture differences: state management, execution model, extensibility.
-            \item Performance characteristics: latency, throughput, resource efficiency.
-            \item Scalability considerations: horizontal scaling, multi-agent coordination, distributed deployment.
-            \item Developer experience: API design, debugging, testing capabilities.
-        \end{itemize}
-        \item Created comprehensive comparison document with benchmarks and use-case recommendations.
-        \item Identified strengths and weaknesses of each approach for GreenNode's use cases.
+        \item Reviewed the current SRE Agent graph, state structure, nodes, tool interfaces, and execution transitions.
+        \item Identified scaling difficulties caused by growing workflow complexity, duplicated control logic, and tightly coupled state and tool management.
+        \item Recorded requirements for a higher-level harness, including context management, memory, loop control, observability, error handling, and controlled execution.
     \end{itemize}
 
-    \begin{figure}[!h]
+    \item \textbf{Deep Research on the LangChain Deep Agent Harness}
+    \begin{itemize}
+        \item Studied the Deep Agent architecture, orchestration model, context and memory management, tool-use model, and execution lifecycle.
+        \item Compared responsibilities handled explicitly in the LangGraph implementation with capabilities provided by the higher-level harness.
+        \item Evaluated support for iteration limits, timeout handling, state persistence, tracing, human approval, permissions, and future multi-agent coordination.
+        \item Mapped the existing SRE Agent tools and graph logic to potential Deep Agent integration points and identified migration constraints.
+    \end{itemize}
+
+    \item \textbf{Migration Architecture Design}
+    \begin{itemize}
+        \item Designed a migration direction in which existing SRE Agent capabilities remain the functional core while the Deep Agent harness manages orchestration and runtime concerns.
+        \item Defined connections to Jaeger observability, the staging execution runtime, existing data-source tools, and future governance controls.
+    \end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{Images/agent_harness_architecture.jpeg}
+\caption{Agent Harness Architecture: Observation, Context, Model, Memory, and Actions Layers}
+\label{fig:agent_harness}
+\end{figure}
+
+\subsubsubsection*{Results / Knowledge Gained}
+
+\begin{itemize}
+    \item Identified the main scalability and maintainability limitations of the LangGraph-based SRE Agent.
+    \item Gained a detailed understanding of the LangChain Deep Agent harness and its relevance to the SRE workflow.
+    \item Produced an initial migration architecture connecting existing SRE capabilities to the higher-level harness.
+\end{itemize}
+
+\subsubsubsection{Week 11: Deep Agent Seminar and Team Knowledge Sharing}
+
+During Week 11, I transformed the Week 10 research into an internal seminar for the R\&D and engineering teams. The seminar explained the SRE Agent's current LangGraph architecture, the scaling problems observed during development, and how the LangChain Deep Agent harness could provide a more stable and scalable direction. I presented the technical comparison, migration concept, and expected impact on future SRE Agent development.
+
+\subsubsubsection*{Task Description}
+
+\begin{itemize}
+    \item \textbf{Seminar Preparation}
+    \begin{itemize}
+        \item Organized the three-month development journey from agent foundations to SRE Agent implementation and harness research.
+        \item Prepared diagrams explaining the current graph-runtime SRE Agent, the harness boundary, observability, and the planned execution runtime.
+        \item Summarized the differences between the current LangGraph implementation and the LangChain Deep Agent approach.
+    \end{itemize}
+
+    \item \textbf{Internal Deep Agent Seminar}
+    \begin{itemize}
+        \item Delivered the seminar to the R\&D and engineering teams.
+        \item Explained why the existing SRE Agent became difficult to scale and why a higher-level harness was considered.
+        \item Presented Deep Agent architecture, orchestration, context and memory management, tool calling, observability, governance, and scalability considerations.
+        \item Discussed how the proposed harness could preserve existing SRE Agent capabilities while reducing orchestration complexity.
+        \item Conducted a question-and-answer session and collected technical feedback from the team.
+    \end{itemize}
+
+    \begin{figure}[H]
     \centering
     \includegraphics[width=0.35\linewidth]{Images/deepagent_logo.png}
     \vspace{10pt}
@@ -603,96 +578,64 @@ Because all internal agents at GreenNode currently operate without virtual envir
     \label{fig:deepagent}
     \end{figure}
 
-    \item \textbf{Internal Deep Agent Seminar}
-    \begin{itemize}
-        \item Prepared and delivered seminar to R\&D and engineering teams covering:
-        \begin{itemize}
-            \item \textbf{Internship Overview:} objectives, 3-month journey, key milestones.
-            \item \textbf{Agent Architecture Fundamentals:} LLM $\rightarrow$ tools $\rightarrow$ sandbox $\rightarrow$ reflection pipeline.
-            \item \textbf{Framework Comparison:} deepagents vs. LangGraph architectural differences.
-            \item \textbf{Infrastructure Integration:} how agents interact with K8s, servers, and data sources.
-            \item \textbf{Production Deployment:} governance, safety, monitoring, and scalability considerations.
-            \item \textbf{Recommendations:} which framework is best for different SRE Agent scenarios and future development.
-        \end{itemize}
-        \item Conducted interactive Q\&A session with R\&D team and engineering leadership.
-        \item Shared codebase insights, best practices, and lessons learned during the 3-month development.
-    \end{itemize}
-
-    \begin{figure}[!h]
+    \begin{figure}[H]
     \centering
     \begin{minipage}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Images/page1.png}%
-        % \caption{Deep Agent Seminar Slide 1}%
         \label{fig:deepagent_slide1}
     \end{minipage}
     \hfill
     \begin{minipage}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Images/page2.png}%
-        % \caption{Deep Agent Seminar Slide 2}%
         \label{fig:deepagent_slide2}
     \end{minipage}
     \vspace{10pt}
     \caption{Deep Agent Seminar Slides}
     \end{figure}
+\end{itemize}
 
-    \item \textbf{Architectural Evolution Plan: LangGraph to Deep Agent Harness Migration}
+\subsubsubsection*{Results / Knowledge Gained}
+
+\begin{itemize}
+    \item Delivered the Deep Agent seminar and communicated the proposed architectural direction to the team.
+    \item Improved the team's understanding of the LangGraph scalability limitations and the role of a higher-level harness.
+    \item Collected feedback to refine the migration plan for the final review.
+\end{itemize}
+
+\subsubsubsection{Week 12: Migration Plan and Line-Manager Review}
+
+During Week 12, I consolidated the technical findings from the SRE Agent development and the Deep Agent seminar into a migration plan. I defined the proposed transition from the LangGraph-based implementation to a higher-level LangChain Deep Agent harness, clarified the migration priorities, and reviewed the recommendation with my line manager.
+
+\subsubsubsection*{Task Description}
+
+\begin{itemize}
+    \item \textbf{Migration Plan Finalization}
     \begin{itemize}
-        \item \textbf{Strategic Assessment:}
-        \begin{itemize}
-            \item Evaluated LangGraph as a low-level engine: good for prototyping, but lacks built-in harness features for production deployment.
-            \item Identified scalability and stability gaps: context management, governance enforcement, multi-agent coordination at scale.
-            \item Determined that transitioning to deep agent harness engine provides higher-level abstractions for enterprise use.
-        \end{itemize}
-
-        \item \textbf{Migration Strategy:}
-        \begin{itemize}
-            \item \textbf{Phase 1 - Foundation:} Replace LangGraph state management with harness-native context and observation layers.
-            \item \textbf{Phase 2 - Governance:} Migrate to harness governance model (approval mechanisms, cost tracking, audit logging).
-            \item \textbf{Phase 3 - Orchestration:} Adopt harness-native multi-agent coordination and swarm patterns.
-            \item \textbf{Phase 4 - Optimization:} Leverage harness-native memory, tool calling, and distributed tracing.
-        \end{itemize}
-
-        \item \textbf{Benefits of Harness Engine:}
-        \begin{itemize}
-            \item \textbf{Stability:} Enterprise-grade error handling, resilience patterns, and production safeguards.
-            \item \textbf{Scalability:} Native support for distributed deployment, horizontal scaling, and resource management.
-            \item \textbf{Observability:} Built-in instrumentation, monitoring, and governance audit trails.
-            \item \textbf{Developer Experience:} Higher-level abstractions reduce complexity, accelerate feature development, improve code maintainability.
-        \end{itemize}
-
-        \item \textbf{Implementation Roadmap:}
-        \begin{itemize}
-            \item Q4 2026: Complete Phase 1-2 migration (foundational harness integration).
-            \item Q1 2027: Complete Phase 3-4 (orchestration and optimization).
-            \item Q2 2027: Full production deployment of deep agent harness-based SRE Agent.
-            \item Parallel: Maintain LangGraph-based agents for backward compatibility during transition.
-        \end{itemize}
+        \item Defined migration phases for context management, memory, orchestration, tool calling, observability, governance, and controlled execution.
+        \item Prioritized the components that should be migrated first to reduce LangGraph complexity without disrupting existing SRE Agent capabilities.
+        \item Documented expected improvements in stability, scalability, maintainability, and future extensibility.
     \end{itemize}
 
-    \item \textbf{Final 3-Month Review and Handoff}
+    \item \textbf{Line-Manager Review}
     \begin{itemize}
-        \item Completed comprehensive summary of 3-month internship:
-        \begin{itemize}
-            \item Month 1: Built foundational research + reflection agent with LangGraph.
-            \item Month 2: Integrated sandbox execution, benchmarked container runtimes (runsc, kata-fc, kata-qemu).
-            \item Month 3: Developed SRE Agent with advanced governance, memory, multi-agent coordination, and production hardening through critical bug fixes.
-        \end{itemize}
-        \item Documented all deliverables: working code, architecture diagrams, design decisions, operational insights.
-        \item Transferred knowledge to supervisor and team members for ongoing development.
-        \item Discussed lessons learned, technical challenges overcome, and recommendations for future work.
-        \item Evaluated final results against internship KPIs; received supervisor and management feedback.
+        \item Presented the current SRE Agent architecture, LangGraph limitations, Deep Agent research, and proposed migration plan.
+        \item Discussed technical risks, dependencies, implementation priorities, and future development requirements.
+        \item Incorporated review feedback into the final documentation and handoff recommendations.
+    \end{itemize}
+
+    \item \textbf{Final Documentation and Handoff}
+    \begin{itemize}
+        \item Consolidated the internship results, architecture diagrams, research findings, and recommended next steps.
+        \item Prepared final handoff material for continued development of the SRE Agent and its future harness migration.
     \end{itemize}
 \end{itemize}
 
 \subsubsubsection*{Results / Knowledge Gained}
 
 \begin{itemize}
-    \item Delivered comprehensive internal seminar on Deep Agent frameworks and architecture.
-    \item Provided actionable recommendations for GreenNode's framework selection and deployment strategy.
-    \item Completed end-to-end development of agent systems: from LLM fundamentals to infrastructure integration.
-    \item Established strong foundation for GreenNode's AI innovation initiatives and agentic systems development.
-    \item Developed expertise in modern agent frameworks, sandbox security, and infrastructure orchestration.
-    \item Successfully transitioned knowledge and codebase to team for continued development and deployment.
+    \item Produced a reviewed migration plan from the LangGraph-based SRE Agent to a higher-level Deep Agent harness.
+    \item Clarified technical priorities and risks for future SRE Agent development.
+    \item Completed the final review and handoff with a concrete architectural direction.
 \end{itemize}

@@ -1,7 +1,7 @@
 \documentclass[a4paper]{article}
 \usepackage{vntex}
 \usepackage{enumitem}
-
+\usepackage{float}
 %\usepackage[english,vietnam]{babel}
 %\usepackage[utf8]{inputenc}
 \usepackage{mathptmx}[ptm]
@@ -37,7 +37,7 @@
 \usepackage{epsfig}
 \usepackage{tikz}
 
-\usetikzlibrary{arrows,snakes,backgrounds,calc}
+\usetikzlibrary{arrows,snakes,backgrounds,calc,positioning,shapes.geometric}
 \usepackage[unicode]{hyperref}
 \hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
 \usepackage{listings}
@@ -116,7 +116,7 @@ morekeywords={}
 		\tiny \bf 
 	\end{tabular}  }
 \fancyfoot{} % clear all footer fields
-\fancyfoot[L]{\scriptsize  Internship Report (CO3335) - Semester 243, 2024 - 2025}
+\fancyfoot[L]{\scriptsize  Internship Report (CO3335) - Semester 252, 2025 - 2026}
 \fancyfoot[R]{\scriptsize  Page {\thepage}/\pageref{LastPage}}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\footrulewidth}{0.3pt}
@@ -195,7 +195,7 @@ morekeywords={}
 \begin{itemize}
 \renewcommand\labelitemi{--}
 \item {\Large \bfseries INTERNSHIP ENTERPRISE:} {\Large \mdseries GreenNode Joint Stock Company}
-\item {\Large \bfseries COMPANY SUPERVISOR: \mdseries \\ NGUYÊN DUY VŨ \& NGUYỄN ĐÌNH AN}
+\item {\Large \bfseries COMPANY SUPERVISOR: \mdseries \\ NGUYÊN DUY VŨ}
 \item {\Large \bfseries FACULTY ADVISOR / SUPERVISOR / REPORT EVALUATOR:}\\
       {\Large \mdseries HOÀNG LÊ HẢI THANH}
 \item {\Large \bfseries IMPLEMENTATION STUDENT (SVTH):}\\
@@ -218,6 +218,77 @@ morekeywords={}
 \input{KetQuaXetTuyen}
 \section{Internship Report}
 \input{Weekly}
+
+\subsection{Knowledge and Skills Acquired}
+
+Throughout this internship, I gradually developed both the theoretical understanding and the practical skills required to design, implement, evaluate, and improve AI-agent systems. My learning followed the same progression as the project itself: I began with agent foundations, applied them to the SRE Agent, added supporting execution and observability capabilities, and finally investigated a more scalable harness architecture. As a result, I was able to connect individual technologies to the practical requirements of a complete agent-development workflow.
+
+\subsubsection{Agent Frameworks and LangGraph}
+
+At the beginning of the internship, I studied the main concepts and development patterns used in agentic AI systems, including ReAct, reflection, self-critique, tool calling, state management, and execution loops. I then compared different agent-framework approaches and selected LangGraph for the initial prototype because it provided explicit control over workflow states, execution nodes, transitions, and tool integration.
+
+Using this foundation, I first implemented a basic research and self-reflection agent and subsequently applied the same principles to build the SRE Agent. Through this process, I learned how to design agent state, define tool interfaces, connect reasoning with actions, handle tool results, and manage the transition from planning to execution, reflection, and final response generation. At the same time, the growing SRE Agent showed me that explicit graph-based orchestration can become increasingly difficult to extend when the number of states, tools, and execution requirements grows.
+
+\subsubsection{Sandbox and Container Runtime}
+
+Building on the SRE Agent workflow, I studied sandboxing as a supporting execution environment rather than as an independent project. In particular, I researched OpenSandbox and compared several container-runtime isolation approaches, including gVisor with \texttt{runsc}, Firecracker with \texttt{kata-fc}, and QEMU with \texttt{kata-qemu}.
+
+To understand the practical trade-offs between these approaches, I considered isolation strength, startup latency, code-execution latency, memory footprint, and network throughput. In addition, I learned how Kubernetes pods, resource limits, timeout handling, output capture, and cleanup procedures can be used to control agent-related execution. Finally, I integrated the sandbox execution path with the SRE Agent in the staging environment and tested how agent tool invocation interacted with controlled execution.
+
+\subsubsection{Observability with Jaeger}
+
+After establishing the SRE Agent's core backend logic, I learned how Jaeger could be used to observe agent behavior in detail. I added tracing for LLM calls, tool invocations, state transitions, decision loops, reflection cycles, and execution latency.
+
+These traces allowed me to examine the agent's internal execution rather than relying only on its final responses. Consequently, I learned how to identify slow execution steps, verify whether tools were invoked correctly, investigate errors, and analyze the behavior of individual decision loops. This experience strengthened my ability to debug and improve agent systems using observable execution evidence.
+
+\subsubsection{Deep Agent Harness}
+
+In the final phase, I investigated the LangChain Deep Agent harness after recognizing that the expanding LangGraph implementation was becoming difficult to scale and maintain. I studied how a higher-level harness could manage orchestration, context, memory, tool use, iteration control, timeout handling, state persistence, observability, permissions, human approval, and future multi-agent coordination.
+
+I then compared the responsibilities implemented explicitly in the LangGraph-based SRE Agent with the capabilities offered by the Deep Agent harness. Although the proposed migration would change the orchestration layer, the existing SRE Agent capabilities could remain the functional core. Based on this comparison, I developed a migration direction in which the higher-level harness would manage orchestration and runtime concerns while preserving the agent's existing operational purpose.
+\subsection{Deliverables}
+
+During the internship, I produced several technical deliverables that together formed the foundation for the future development of GreenNode's internal SRE Agent. In particular, these deliverables combined the agent itself with the supporting execution, observability, documentation, and handoff materials.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{Images/full_arch.png}
+    \caption{Complete SRE Agent Architecture and Supporting Components}
+    \label{fig:full_architecture}
+\end{figure}
+
+\subsubsection{SRE Agent}
+
+My main technical deliverable was an SRE Agent designed to support internal operational troubleshooting. I built the agent from the basic agent foundations developed during the first month of the internship. The agent can interpret an operational request, plan diagnostic actions, invoke the appropriate tools, manage execution state, evaluate tool results, and generate a structured response.
+
+I also refined the agent's error-handling and execution flow so that diagnostic actions could be followed and analyzed more consistently. In addition, the Week 9 demonstration in Figure~\ref{fig:sre_agent_demo} presents the SRE-Agent workflow and its operational interface.
+
+\subsubsection{Supporting Sandbox Execution Environment}
+
+I integrated a sandbox execution path with the SRE Agent in the staging environment. In this way, the sandbox provided controlled execution for code-related or diagnostic actions while preserving the main SRE Agent workflow.
+
+Before wiring, I conducted the benchmark of the sandbox execution path and compared the performance of different container runtimes. I also tested the sandbox's ability to handle timeouts, resource limits, output capture, and cleanup procedures. Finally, I verified that the SRE Agent could invoke tools through the sandbox and that the overall workflow remained functional and reliable.
+
+\subsubsection{Agent Observability}
+
+I added Jaeger-based observability to the SRE Agent. The instrumentation records important parts of the agent execution, including LLM calls, tool invocations, state transitions, decision loops, and execution latency.
+
+Consequently, this observability layer made it possible to inspect agent behavior, analyze execution bottlenecks, verify tool interactions, and support future debugging and performance improvement.
+
+\subsubsection{Architecture and Research Materials}
+
+I prepared architecture diagrams and technical research materials describing the agent workflow, the SRE Agent architecture, the sandbox execution path, the observability connection, and the proposed Deep Agent harness direction.
+
+I also produced a comparison of the current LangGraph implementation and the higher-level Deep Agent approach. Consequently, these materials were used to explain the current system, its scalability limitations, and the possible migration direction.
+
+\subsubsection{Evaluation and Handoff Status}
+
+I evaluated the agent using representative diagnostic flows and execution traces. During the evaluation, I considered task completion, response quality, tool performance, error handling, reflection behavior, and execution latency.
+
+However, I did not record a final numerical task-success rate or a complete numerical latency benchmark during the internship. Therefore, I do not report fabricated performance values. Instead, the available evaluation evidence consists of functional demonstrations, representative workflow tests, Jaeger traces, observed execution behavior, and qualitative analysis of the agent's correctness and reliability.
+
+At the end of the internship, the SRE Agent, its supporting sandbox execution path, and its Jaeger observability layer had been developed and evaluated in the staging environment. In addition, I completed the Deep Agent seminar, migration plan, architecture documentation, and handoff materials. Although the migration from the LangGraph implementation to the LangChain Deep Agent harness was not completed in production, it remained a clearly defined planned future direction.
+
 \newpage
 \section{Conclusion}
 % \begin{itemize}
@@ -228,7 +299,7 @@ morekeywords={}
 
 % \end{itemize}
 
-During this three-month AI Applied Engineer internship, I strengthened my knowledge of large language models, ReAct and Harness agent frameworks, and  infrastructure/data systems like Kubernetes, MySQL, MongoDB and Elasticsearch. I also gained practical experience analyzing the SRE Agent codebase, debugging issues related to under the hood agent operations, and researching GreenNode's infrastructure and data sources. This experience gave me a practical understanding of the full agent-development lifecycle, from theory and experimentation to production-oriented design.
+During this three-month internship on AI Innovation for Internal Product Development, I strengthened my knowledge of large language models, ReAct and Harness agent frameworks, and supporting infrastructure such as Kubernetes. I also gained hands-on experience building the SRE Agent from the ground up, from the initial agent foundations through core logic, sandbox integration, and observability, while researching GreenNode's infrastructure and data sources along the way. This experience gave me a practical understanding of the full agent-development lifecycle, from theory and experimentation to production-oriented design.
 
 I found GreenNode to be a supportive and innovative working environment. The guidance from my mentors, together with the opportunity to work with real systems and infrastructure, helped me improve both my technical and problem-solving skills. Overall, the internship deepened my interest in building stable, scalable, and valuable AI systems for real-world use.
 

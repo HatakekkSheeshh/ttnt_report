@@ -2,6 +2,22 @@
 
 All notable changes to this project are documented in this file.
 
+## [1.0.3] - 2026-08-16
+
+Expanded the English internship report with consolidated skills, deliverables, architecture, and SRE Agent integration details.
+
+### Added
+
+- Added the consolidated Knowledge and Skills Acquired section covering agent frameworks, sandbox runtimes, Jaeger observability, and the Deep Agent harness.
+- Added the Deliverables section with SRE Agent, sandbox execution, observability, architecture materials, evaluation, and handoff status.
+- Added the complete SRE Agent architecture figure and Week 9 SRE-Agent demonstration images.
+- Added internal database tools to the SRE Agent for operational-log checking and resource diagnosis.
+
+### Updated
+
+- Refined the weekly roadmap and conclusion to describe the SRE Agent as built from the ground up.
+- Improved report wording and transitions for a clearer academic narrative.
+
 ## [1.0.2] - 2026-08-09
 
 Updated the internship report content and PDF inclusion workflow.
